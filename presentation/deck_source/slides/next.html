@@ -1,0 +1,40 @@
+<section id="next" data-transition="fade" style="background:#F1EEE6;color:#1F2A3D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#B5481C">Status and next steps</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:64px;font-weight:600;line-height:1.15;color:#14213D">M2 data is ready; M3 starts with full labelling</h2>
+</div>
+<div style="display:flex;gap:32px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FBFBF8;border-radius:16px;padding:40px">
+<h3 style="font-size:32px;font-weight:600;color:#14213D">Done</h3>
+<ul style="font-size:27px;line-height:1.5;color:#4A5568">
+<li>26 reports collected and cleaned</li>
+<li>Section detection and sentence splitting</li>
+<li>Company-wise splits fixed</li>
+<li>Guide v1.1 and 300-sentence pilot</li>
+<li>Data card, EDA and statistics</li>
+</ul>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FBFBF8;border-radius:16px;padding:40px">
+<h3 style="font-size:32px;font-weight:600;color:#14213D">Next 2 weeks</h3>
+<ul style="font-size:27px;line-height:1.5;color:#4A5568">
+<li>Human agreement check (kappa ≥ 0.6)</li>
+<li>Label ~2,200 sentences</li>
+<li>Filter table fragments</li>
+<li>Add more distressed companies</li>
+<li>Freeze dataset v1.0</li>
+</ul>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FBFBF8;border-radius:16px;padding:40px">
+<h3 style="font-size:32px;font-weight:600;color:#14213D">M3 models</h3>
+<ul style="font-size:27px;line-height:1.5;color:#4A5568">
+<li>Baseline: TF-IDF + logistic regression</li>
+<li>FinBERT fine-tuned</li>
+<li>SetFit (few labels)</li>
+<li>Zero-shot LLM</li>
+<li>Experiment log in Git</li>
+</ul>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">18 · Rebuild everything: ./run_prep.sh</p>
+<aside>Close with status. Everything on the left exists today and can be rebuilt with one command. The next two weeks are labelling: first the agreement check, then the full set, with the test set labelled by hand. M3 compares a classical baseline against FinBERT, SetFit and a zero-shot LLM, which also gives us the numbers for the “why not ChatGPT” question.</aside>
+</section>

@@ -1,0 +1,16 @@
+<section id="sections" data-transition="fade" style="background:#FBFBF8;color:#1F2A3D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#B5481C">M2 · Exploratory analysis</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:64px;font-weight:600;line-height:1.15;color:#14213D">The riskiest sections are the smallest</h2>
+</div>
+<div style="display:flex;gap:56px;align-items:center">
+<img src="/_blob/d9e9621a6eb80bdf49ba374ed75654aa" alt="Bar chart of sentences by report section: Notes 39,102; Board's report 18,260; MD&amp;A 13,590; Corporate governance 10,374; Auditor's report 5,365; BRR 4,926; CARO 2,082; Secretarial audit 1,655; Contingent liabilities 1,272; IFC report 166" style="width:930px;height:620px;object-fit:contain;border-radius:12px">
+<div style="flex:1;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:30px;line-height:1.45;color:#4A5568">Auditor’s report, CARO, contingent liabilities and secretarial audit together are <b>under 11%</b> of all sentences.</p>
+<p style="font-size:30px;line-height:1.45;color:#4A5568">But they hold the strongest red flags: going-concern doubts, defaults, qualified opinions, penalties.</p>
+<p style="font-size:30px;line-height:1.45;color:#14213D"><b>Decision:</b> oversample these sections when labelling, and weight them in the product.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">11 · 96,792 sentences across 26 reports</p>
+<aside>Section detection lets us see where the text comes from. Notes to accounts dominate by volume, but the high-signal sections are small. That drives our sampling decision: 40% of training sentences will come from these sections, so the model sees enough red flags.</aside>
+</section>

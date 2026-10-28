@@ -1,0 +1,18 @@
+<section id="keywords" data-transition="fade" style="background:#FBFBF8;color:#1F2A3D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#B5481C">M2 · Key finding</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:64px;font-weight:600;line-height:1.15;color:#14213D">Keyword search can’t tell boilerplate from a red flag</h2>
+</div>
+<div style="display:flex;gap:48px;align-items:center">
+<img src="/_blob/b845c9d09add7c4fe22a2f3d32415216" alt="Grouped bar chart: share of reports containing each red-flag keyword type. Going concern: healthy 100%, distressed 70%. Default: both 100%. Insolvency: healthy 62%, distressed 70%. Qualified opinion: healthy 0%, distressed 40%. Penalty: healthy 88%, distressed 90%. Fraud reported: healthy 6%, distressed 30%. Rating downgrade: healthy 12%, distressed 30%." style="width:1060px;height:480px;object-fit:contain;border-radius:12px">
+<div style="flex:1;display:flex;flex-direction:column;gap:24px">
+<p style="font-size:28px;line-height:1.45;color:#4A5568">“Going concern” appears in <b>every healthy report</b>: auditors write it in standard wording.</p>
+<p style="font-size:28px;line-height:1.45;color:#4A5568">Only “qualified opinion” separates the groups cleanly.</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#14213D;border-radius:16px;padding:32px 48px">
+<p style="font-size:30px;line-height:1.4;color:#F4F1EA">This is why we add a <b>Specific vs Generic</b> label and train a model, instead of matching keywords.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B7280">13</p>
+<aside>This is our most important M2 finding. Standard auditor text says things like “if we conclude that a material uncertainty exists in relation to going concern…” in every report, so a keyword search flags all 16 healthy companies. The words are the same; what differs is whether the sentence describes a concrete event about this company. That is exactly what our Specific vs Generic label captures, and why the project needs a trained classifier rather than rules.</aside>
+</section>

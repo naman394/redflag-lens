@@ -1,0 +1,8 @@
+split,group,companies,reports,sentences
+backtest,distressed,1,1,3395
+test,distressed,2,2,6223
+test,healthy,3,3,9607
+train,distressed,5,6,21755
+train,healthy,11,11,45124
+val,distressed,1,1,3421
+val,healthy,2,2,7267

@@ -1,0 +1,214 @@
+{
+  "corpus": {
+    "reports": 26,
+    "companies": 25,
+    "distressed_reports": 10,
+    "healthy_reports": 16,
+    "pages": 8303,
+    "pdf_mb": 177.29999999999998,
+    "pages_without_text_pct": 1.77,
+    "sentences": 96792,
+    "median_words": 20.0,
+    "pct_with_money": 5.5,
+    "pct_with_date": 8.0,
+    "pct_kw_hit": 8.5
+  },
+  "splits": [
+    {
+      "split": "backtest",
+      "group": "distressed",
+      "companies": 1,
+      "reports": 1,
+      "sentences": 3395
+    },
+    {
+      "split": "test",
+      "group": "distressed",
+      "companies": 2,
+      "reports": 2,
+      "sentences": 6223
+    },
+    {
+      "split": "test",
+      "group": "healthy",
+      "companies": 3,
+      "reports": 3,
+      "sentences": 9607
+    },
+    {
+      "split": "train",
+      "group": "distressed",
+      "companies": 5,
+      "reports": 6,
+      "sentences": 21755
+    },
+    {
+      "split": "train",
+      "group": "healthy",
+      "companies": 11,
+      "reports": 11,
+      "sentences": 45124
+    },
+    {
+      "split": "val",
+      "group": "distressed",
+      "companies": 1,
+      "reports": 1,
+      "sentences": 3421
+    },
+    {
+      "split": "val",
+      "group": "healthy",
+      "companies": 2,
+      "reports": 2,
+      "sentences": 7267
+    }
+  ],
+  "sentences_by_section": {
+    "NOTES": 39102,
+    "BOARDS_REPORT": 18260,
+    "MDA": 13590,
+    "CORP_GOV": 10374,
+    "AUDITOR_REPORT": 5365,
+    "BRR": 4926,
+    "CARO": 2082,
+    "SECRETARIAL_AUDIT": 1655,
+    "NOTES_CONTINGENT": 1272,
+    "IFC_REPORT": 166
+  },
+  "red_flag_phrases": {
+    "median_per_1k_distressed": 12.7,
+    "median_per_1k_healthy": 5.3,
+    "mann_whitney_U": 121.0,
+    "p_value_one_sided": 0.016399406932772816,
+    "per_type_reports_with_any": {
+      "Going concern doubt": {
+        "distressed": "7/10",
+        "healthy": "16/16"
+      },
+      "Default / overdue": {
+        "distressed": "10/10",
+        "healthy": "16/16"
+      },
+      "Insolvency / NCLT": {
+        "distressed": "7/10",
+        "healthy": "10/16"
+      },
+      "Qualified / adverse opinion": {
+        "distressed": "4/10",
+        "healthy": "0/16"
+      },
+      "Penalty / show cause": {
+        "distressed": "9/10",
+        "healthy": "14/16"
+      },
+      "Fraud reported": {
+        "distressed": "3/10",
+        "healthy": "1/16"
+      },
+      "Rating downgrade": {
+        "distressed": "3/10",
+        "healthy": "2/16"
+      }
+    }
+  },
+  "pilot": {
+    "n": 300,
+    "risk": 36,
+    "risk_pct": 12.0,
+    "risk_pct_by_stratum": {
+      "high_signal": 14.2,
+      "keyword": 21.7,
+      "random": 5.0
+    },
+    "risk_pct_by_group": {
+      "distressed": 23.5,
+      "healthy": 6.4
+    },
+    "categories": {
+      "Financial": 14,
+      "Legal": 9,
+      "Regulatory": 7,
+      "Operational": 4,
+      "Business": 2
+    },
+    "specificity": {
+      "Specific": 32,
+      "Generic": 4
+    },
+    "bad_extraction": 22,
+    "imbalance_ratio_nonrisk_to_risk": 7.3,
+    "chi2_group_vs_risk": {
+      "chi2": 16.55,
+      "p": 4.729792150147659e-05
+    }
+  },
+  "yoy_dhfl_pct_fy2019_sentences_repeated_from_fy2018": 27.7,
+  "vocab": {
+    "train": 20876,
+    "test": 10642,
+    "test_oov_pct": 21.3
+  },
+  "auditor_words_distressed_logodds_top15": [
+    [
+      "lakh",
+      4.29
+    ],
+    [
+      "lenders",
+      4.16
+    ],
+    [
+      "disclaimer",
+      4.04
+    ],
+    [
+      "jaypee",
+      3.9
+    ],
+    [
+      "qualified",
+      3.26
+    ],
+    [
+      "housing",
+      3.17
+    ],
+    [
+      "unable",
+      3.06
+    ],
+    [
+      "effects",
+      2.71
+    ],
+    [
+      "aggregating",
+      2.15
+    ],
+    [
+      "restructuring",
+      2.08
+    ],
+    [
+      "overdue",
+      1.95
+    ],
+    [
+      "lakhs",
+      1.85
+    ],
+    [
+      "loan",
+      1.76
+    ],
+    [
+      "advances",
+      1.7
+    ],
+    [
+      "reliance",
+      1.53
+    ]
+  ]
+}

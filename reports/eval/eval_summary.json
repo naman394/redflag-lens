@@ -1,0 +1,576 @@
+{
+ "comparison": [
+  {
+   "model": "finbert_nil",
+   "precision": 0.636,
+   "recall": 0.875,
+   "recall_95ci": [
+    0.684,
+    1.0
+   ],
+   "f1": 0.737,
+   "f1_95ci": [
+    0.545,
+    0.875
+   ],
+   "category_macro_f1": 0.613,
+   "flagged": 22,
+   "true_risk": 16
+  },
+  {
+   "model": "finbert_s123_nil",
+   "precision": 0.636,
+   "recall": 0.875,
+   "recall_95ci": [
+    0.684,
+    1.0
+   ],
+   "f1": 0.737,
+   "f1_95ci": [
+    0.555,
+    0.878
+   ],
+   "category_macro_f1": 0.564,
+   "flagged": 22,
+   "true_risk": 16
+  },
+  {
+   "model": "finbert",
+   "precision": 0.636,
+   "recall": 0.875,
+   "recall_95ci": [
+    0.688,
+    1.0
+   ],
+   "f1": 0.737,
+   "f1_95ci": [
+    0.55,
+    0.872
+   ],
+   "category_macro_f1": 0.613,
+   "flagged": 22,
+   "true_risk": 16
+  },
+  {
+   "model": "finbert_s123",
+   "precision": 0.636,
+   "recall": 0.875,
+   "recall_95ci": [
+    0.692,
+    1.0
+   ],
+   "f1": 0.737,
+   "f1_95ci": [
+    0.545,
+    0.889
+   ],
+   "category_macro_f1": 0.564,
+   "flagged": 22,
+   "true_risk": 16
+  },
+  {
+   "model": "finbert_s123_tuned_nil",
+   "precision": 0.538,
+   "recall": 0.875,
+   "recall_95ci": [
+    0.688,
+    1.0
+   ],
+   "f1": 0.667,
+   "f1_95ci": [
+    0.48,
+    0.816
+   ],
+   "category_macro_f1": 0.508,
+   "flagged": 26,
+   "true_risk": 16
+  },
+  {
+   "model": "finbert_s123_tuned",
+   "precision": 0.538,
+   "recall": 0.875,
+   "recall_95ci": [
+    0.692,
+    1.0
+   ],
+   "f1": 0.667,
+   "f1_95ci": [
+    0.474,
+    0.824
+   ],
+   "category_macro_f1": 0.508,
+   "flagged": 26,
+   "true_risk": 16
+  },
+  {
+   "model": "finbert_s7_nil",
+   "precision": 0.565,
+   "recall": 0.812,
+   "recall_95ci": [
+    0.6,
+    1.0
+   ],
+   "f1": 0.667,
+   "f1_95ci": [
+    0.471,
+    0.816
+   ],
+   "category_macro_f1": 0.476,
+   "flagged": 23,
+   "true_risk": 16
+  },
+  {
+   "model": "finbert_s7",
+   "precision": 0.565,
+   "recall": 0.812,
+   "recall_95ci": [
+    0.6,
+    1.0
+   ],
+   "f1": 0.667,
+   "f1_95ci": [
+    0.465,
+    0.824
+   ],
+   "category_macro_f1": 0.476,
+   "flagged": 23,
+   "true_risk": 16
+  },
+  {
+   "model": "tfidf_lr_nil",
+   "precision": 0.458,
+   "recall": 0.688,
+   "recall_95ci": [
+    0.455,
+    0.917
+   ],
+   "f1": 0.55,
+   "f1_95ci": [
+    0.333,
+    0.714
+   ],
+   "category_macro_f1": 0.421,
+   "flagged": 24,
+   "true_risk": 16
+  },
+  {
+   "model": "finbert_tuned_nil",
+   "precision": 0.389,
+   "recall": 0.875,
+   "recall_95ci": [
+    0.667,
+    1.0
+   ],
+   "f1": 0.538,
+   "f1_95ci": [
+    0.364,
+    0.691
+   ],
+   "category_macro_f1": 0.472,
+   "flagged": 36,
+   "true_risk": 16
+  },
+  {
+   "model": "finbert_tuned",
+   "precision": 0.389,
+   "recall": 0.875,
+   "recall_95ci": [
+    0.688,
+    1.0
+   ],
+   "f1": 0.538,
+   "f1_95ci": [
+    0.353,
+    0.683
+   ],
+   "category_macro_f1": 0.472,
+   "flagged": 36,
+   "true_risk": 16
+  },
+  {
+   "model": "tfidf_lr",
+   "precision": 0.44,
+   "recall": 0.688,
+   "recall_95ci": [
+    0.444,
+    0.917
+   ],
+   "f1": 0.537,
+   "f1_95ci": [
+    0.323,
+    0.706
+   ],
+   "category_macro_f1": 0.413,
+   "flagged": 25,
+   "true_risk": 16
+  },
+  {
+   "model": "finbert_s7_tuned_nil",
+   "precision": 0.333,
+   "recall": 0.938,
+   "recall_95ci": [
+    0.8,
+    1.0
+   ],
+   "f1": 0.492,
+   "f1_95ci": [
+    0.328,
+    0.636
+   ],
+   "category_macro_f1": 0.344,
+   "flagged": 45,
+   "true_risk": 16
+  },
+  {
+   "model": "finbert_s7_tuned",
+   "precision": 0.333,
+   "recall": 0.938,
+   "recall_95ci": [
+    0.786,
+    1.0
+   ],
+   "f1": 0.492,
+   "f1_95ci": [
+    0.316,
+    0.633
+   ],
+   "category_macro_f1": 0.344,
+   "flagged": 45,
+   "true_risk": 16
+  },
+  {
+   "model": "zero_shot_open_llm",
+   "precision": 0.37,
+   "recall": 0.625,
+   "recall_95ci": [
+    0.385,
+    0.867
+   ],
+   "f1": 0.465,
+   "f1_95ci": [
+    0.273,
+    0.644
+   ],
+   "category_macro_f1": 0.425,
+   "flagged": 27,
+   "true_risk": 16
+  },
+  {
+   "model": "tfidf_lr_tuned_nil",
+   "precision": 0.142,
+   "recall": 0.938,
+   "recall_95ci": [
+    0.786,
+    1.0
+   ],
+   "f1": 0.246,
+   "f1_95ci": [
+    0.148,
+    0.346
+   ],
+   "category_macro_f1": 0.268,
+   "flagged": 106,
+   "true_risk": 16
+  },
+  {
+   "model": "tfidf_lr_tuned",
+   "precision": 0.139,
+   "recall": 0.938,
+   "recall_95ci": [
+    0.786,
+    1.0
+   ],
+   "f1": 0.242,
+   "f1_95ci": [
+    0.142,
+    0.342
+   ],
+   "category_macro_f1": 0.267,
+   "flagged": 108,
+   "true_risk": 16
+  },
+  {
+   "model": "keyword",
+   "precision": 0.098,
+   "recall": 0.625,
+   "recall_95ci": [
+    0.375,
+    0.875
+   ],
+   "f1": 0.169,
+   "f1_95ci": [
+    0.081,
+    0.267
+   ],
+   "category_macro_f1": 0.148,
+   "flagged": 102,
+   "true_risk": 16
+  }
+ ],
+ "best_by_f1": "finbert_nil",
+ "errors_finbert": {
+  "counts": {
+   "correct": 288,
+   "FP: other": 6,
+   "category_confusion": 2,
+   "FN: specific event missed": 2,
+   "FP: generic risk wording": 1,
+   "FP: negated / nil statement": 1
+  },
+  "category_confusion_on_detected": {
+   "Financial": {
+    "Financial": 5,
+    "Legal": 0,
+    "Regulatory": 0
+   },
+   "Legal": {
+    "Financial": 0,
+    "Legal": 5,
+    "Regulatory": 1
+   },
+   "Regulatory": {
+    "Financial": 0,
+    "Legal": 1,
+    "Regulatory": 2
+   }
+  }
+ },
+ "errors_finbert_tuned": {
+  "counts": {
+   "correct": 274,
+   "FP: other": 15,
+   "FP: negated / nil statement": 4,
+   "FP: generic risk wording": 2,
+   "category_confusion": 2,
+   "FN: specific event missed": 2,
+   "FP: boilerplate / policy text": 1
+  },
+  "category_confusion_on_detected": {
+   "Financial": {
+    "Financial": 5,
+    "Legal": 0,
+    "Regulatory": 0
+   },
+   "Legal": {
+    "Financial": 0,
+    "Legal": 5,
+    "Regulatory": 1
+   },
+   "Regulatory": {
+    "Financial": 0,
+    "Legal": 1,
+    "Regulatory": 2
+   }
+  }
+ },
+ "errors_tfidf_lr": {
+  "counts": {
+   "correct": 279,
+   "FP: other": 10,
+   "FN: specific event missed": 4,
+   "FP: generic risk wording": 2,
+   "category_confusion": 2,
+   "FP: negated / nil statement": 2,
+   "FN: generic risk statement": 1
+  },
+  "category_confusion_on_detected": {
+   "Financial": {
+    "Financial": 4,
+    "Legal": 0,
+    "Regulatory": 0
+   },
+   "Legal": {
+    "Financial": 0,
+    "Legal": 4,
+    "Regulatory": 1
+   },
+   "Regulatory": {
+    "Financial": 0,
+    "Legal": 1,
+    "Regulatory": 1
+   }
+  }
+ },
+ "errors_tfidf_lr_tuned": {
+  "counts": {
+   "correct": 202,
+   "FP: other": 71,
+   "FP: negated / nil statement": 13,
+   "FP: boilerplate / policy text": 6,
+   "category_confusion": 4,
+   "FP: generic risk wording": 3,
+   "FN: specific event missed": 1
+  },
+  "category_confusion_on_detected": {
+   "Financial": {
+    "Financial": 5,
+    "Legal": 1,
+    "Regulatory": 1
+   },
+   "Legal": {
+    "Financial": 0,
+    "Legal": 4,
+    "Regulatory": 1
+   },
+   "Regulatory": {
+    "Financial": 0,
+    "Legal": 1,
+    "Regulatory": 2
+   }
+  }
+ },
+ "robustness": [
+  {
+   "model": "tfidf_lr",
+   "threshold": 0.17,
+   "clean": {
+    "recall": 0.938,
+    "precision": 0.139
+   },
+   "rupee_variants": {
+    "recall": 0.938,
+    "precision": 0.139,
+    "changed_predictions": 0,
+    "sentences_with_rupee": 14
+   },
+   "typo_noise_4pct": {
+    "recall": 0.938,
+    "precision": 0.153,
+    "changed_predictions": 18
+   },
+   "negation_flip": {
+    "n": 11,
+    "still_flagged_after_negation": 9,
+    "note": "lower is better: these became nil confirmations"
+   },
+   "by_group": {
+    "distressed": {
+     "n": 117,
+     "risk": 4,
+     "recall": 1.0,
+     "precision": 0.082
+    },
+    "healthy": {
+     "n": 183,
+     "risk": 12,
+     "recall": 0.917,
+     "precision": 0.186
+    }
+   },
+   "by_company_unseen_sectors": {
+    "JETAIRWAYS": {
+     "n": 35,
+     "risk": 3,
+     "flagged": 14,
+     "recall": 1.0
+    },
+    "MARUTI": {
+     "n": 85,
+     "risk": 3,
+     "flagged": 29,
+     "recall": 1.0
+    },
+    "SUNPHARMA": {
+     "n": 60,
+     "risk": 8,
+     "flagged": 22,
+     "recall": 1.0
+    },
+    "TCS": {
+     "n": 38,
+     "risk": 1,
+     "flagged": 8,
+     "recall": 0.0
+    },
+    "YESBANK": {
+     "n": 82,
+     "risk": 1,
+     "flagged": 35,
+     "recall": 1.0
+    }
+   }
+  },
+  {
+   "model": "finbert",
+   "threshold": 0.05,
+   "clean": {
+    "recall": 0.875,
+    "precision": 0.389
+   },
+   "rupee_variants": {
+    "recall": 0.875,
+    "precision": 0.378,
+    "changed_predictions": 1,
+    "sentences_with_rupee": 14
+   },
+   "typo_noise_4pct": {
+    "recall": 0.875,
+    "precision": 0.304,
+    "changed_predictions": 20
+   },
+   "negation_flip": {
+    "n": 11,
+    "still_flagged_after_negation": 9,
+    "note": "lower is better: these became nil confirmations"
+   },
+   "by_group": {
+    "distressed": {
+     "n": 117,
+     "risk": 4,
+     "recall": 0.75,
+     "precision": 0.231
+    },
+    "healthy": {
+     "n": 183,
+     "risk": 12,
+     "recall": 0.917,
+     "precision": 0.478
+    }
+   },
+   "by_company_unseen_sectors": {
+    "JETAIRWAYS": {
+     "n": 35,
+     "risk": 3,
+     "flagged": 8,
+     "recall": 1.0
+    },
+    "MARUTI": {
+     "n": 85,
+     "risk": 3,
+     "flagged": 9,
+     "recall": 1.0
+    },
+    "SUNPHARMA": {
+     "n": 60,
+     "risk": 8,
+     "flagged": 10,
+     "recall": 1.0
+    },
+    "TCS": {
+     "n": 38,
+     "risk": 1,
+     "flagged": 4,
+     "recall": 0.0
+    },
+    "YESBANK": {
+     "n": 82,
+     "risk": 1,
+     "flagged": 5,
+     "recall": 0.0
+    }
+   }
+  }
+ ],
+ "latency": [
+  {
+   "model": "tfidf_lr",
+   "ms_per_sentence": 0.22,
+   "est_classify_s_per_report_3038_sentences": 0.7
+  },
+  {
+   "model": "finbert",
+   "ms_per_sentence": 45.06,
+   "est_classify_s_per_report_3038_sentences": 136.9
+  }
+ ]
+}

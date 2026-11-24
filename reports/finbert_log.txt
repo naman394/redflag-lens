@@ -1,0 +1,15 @@
+[transformers] You passed `num_labels=6` which is incompatible to the `id2label` map of length `3`.
+W1124 22:48:38.193000 84283 torch/distributed/elastic/multiprocessing/redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 4844.56it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: ProsusAI/finbert
+Key               | Status   |                                                                                       
+------------------+----------+---------------------------------------------------------------------------------------
+classifier.bias   | MISMATCH | Reinit due to size mismatch - ckpt: torch.Size([3]) vs model:torch.Size([6])          
+classifier.weight | MISMATCH | Reinit due to size mismatch - ckpt: torch.Size([3, 768]) vs model:torch.Size([6, 768])
+
+Notes:
+- MISMATCH:	ckpt weights were loaded, but they did not match the original empty weight shapes.
+epoch 1: loss 113.19  val {'risk_precision': 0.5926, 'risk_recall': 0.5333, 'risk_f1': 0.5614, 'risk_pr_auc': 0.6072}
+epoch 2: loss 71.99  val {'risk_precision': 0.7586, 'risk_recall': 0.7333, 'risk_f1': 0.7458, 'risk_pr_auc': 0.6683}
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/resource_tracker.py:324: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-84283-ejqp81qt'}
+  warnings.warn(

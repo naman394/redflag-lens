@@ -1,0 +1,10 @@
+run_id,date,git_commit,model,data_version,split,params,risk_precision,risk_recall,risk_f1,risk_pr_auc,category_macro_f1,category_acc_on_detected,specificity_f1_specific,notes
+keyword-20261124-224813,2026-11-24 22:48,82575c1,keyword,v1.0,train,"{""rules"": ""RISK_KW regex, first-match category""}",0.2574,0.6588,0.3702,0.2149,0.1851,0.7554,0.4253,Ctrl+F baseline
+keyword-20261124-224813,2026-11-24 22:48,82575c1,keyword,v1.0,val,"{""rules"": ""RISK_KW regex, first-match category""}",0.2571,0.6,0.36,0.2004,0.274,0.7778,0.5143,Ctrl+F baseline
+keyword-20261124-224813,2026-11-24 22:48,82575c1,keyword,v1.0,test,"{""rules"": ""RISK_KW regex, first-match category""}",0.098,0.625,0.1695,0.0813,0.1477,0.7,0.4286,Ctrl+F baseline
+tfidf_lr-20261124-224829,2026-11-24 22:48,82575c1,tfidf_lr,v1.0,train,"{""word_ngrams"": ""1-2"", ""char_ngrams"": ""3-5"", ""C"": 4, ""class_weight"": ""balanced"", ""threshold"": 0.17}",0.9769,1.0,0.9883,1.0,0.9903,1.0,1.0,
+tfidf_lr-20261124-224829,2026-11-24 22:48,82575c1,tfidf_lr,v1.0,train_tuned,"{""word_ngrams"": ""1-2"", ""char_ngrams"": ""3-5"", ""C"": 4, ""class_weight"": ""balanced"", ""threshold"": 0.17}",0.5249,1.0,0.6884,1.0,0.7872,1.0,1.0,
+tfidf_lr-20261124-224829,2026-11-24 22:48,82575c1,tfidf_lr,v1.0,val,"{""word_ngrams"": ""1-2"", ""char_ngrams"": ""3-5"", ""C"": 4, ""class_weight"": ""balanced"", ""threshold"": 0.17}",0.7273,0.5333,0.6154,0.7332,0.5476,0.875,0.7,
+tfidf_lr-20261124-224829,2026-11-24 22:48,82575c1,tfidf_lr,v1.0,val_tuned,"{""word_ngrams"": ""1-2"", ""char_ngrams"": ""3-5"", ""C"": 4, ""class_weight"": ""balanced"", ""threshold"": 0.17}",0.2989,0.8667,0.4444,0.7332,0.3964,0.8077,0.9167,
+tfidf_lr-20261124-224829,2026-11-24 22:48,82575c1,tfidf_lr,v1.0,test,"{""word_ngrams"": ""1-2"", ""char_ngrams"": ""3-5"", ""C"": 4, ""class_weight"": ""balanced"", ""threshold"": 0.17}",0.44,0.6875,0.5366,0.4765,0.4127,0.8182,0.7368,
+tfidf_lr-20261124-224829,2026-11-24 22:48,82575c1,tfidf_lr,v1.0,test_tuned,"{""word_ngrams"": ""1-2"", ""char_ngrams"": ""3-5"", ""C"": 4, ""class_weight"": ""balanced"", ""threshold"": 0.17}",0.1389,0.9375,0.2419,0.4765,0.2671,0.7333,0.9091,

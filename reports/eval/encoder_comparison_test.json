@@ -1,0 +1,145 @@
+{
+ "debv3l_ens3@0.5": {
+  "risk_precision": 0.6842,
+  "risk_recall": 0.8125,
+  "risk_f1": 0.7429,
+  "risk_pr_auc": 0.7326,
+  "category_macro_f1": 0.6212,
+  "category_acc_on_detected": 0.8462,
+  "f1_ci": [
+   0.55,
+   0.88
+  ],
+  "thr": 0.5
+ },
+ "debv3l_ens3@tuned": {
+  "risk_precision": 0.4516,
+  "risk_recall": 0.875,
+  "risk_f1": 0.5957,
+  "risk_pr_auc": 0.7326,
+  "category_macro_f1": 0.5338,
+  "category_acc_on_detected": 0.8571,
+  "f1_ci": [
+   0.4,
+   0.75
+  ],
+  "thr": 0.05
+ },
+ "debv3l_aug_ens3@0.5": {
+  "risk_precision": 0.7,
+  "risk_recall": 0.875,
+  "risk_f1": 0.7778,
+  "risk_pr_auc": 0.7815,
+  "category_macro_f1": 0.6185,
+  "category_acc_on_detected": 0.7857,
+  "f1_ci": [
+   0.59,
+   0.91
+  ],
+  "thr": 0.5
+ },
+ "debv3l_aug_ens3@tuned": {
+  "risk_precision": 0.5185,
+  "risk_recall": 0.875,
+  "risk_f1": 0.6512,
+  "risk_pr_auc": 0.7815,
+  "category_macro_f1": 0.5242,
+  "category_acc_on_detected": 0.7857,
+  "f1_ci": [
+   0.46,
+   0.8
+  ],
+  "thr": 0.05
+ },
+ "debv3b_ens3@0.5": {
+  "risk_precision": 0.619,
+  "risk_recall": 0.8125,
+  "risk_f1": 0.7027,
+  "risk_pr_auc": 0.6776,
+  "category_macro_f1": 0.5222,
+  "category_acc_on_detected": 0.7692,
+  "f1_ci": [
+   0.51,
+   0.85
+  ],
+  "thr": 0.5
+ },
+ "debv3b_ens3@tuned": {
+  "risk_precision": 0.4444,
+  "risk_recall": 1.0,
+  "risk_f1": 0.6154,
+  "risk_pr_auc": 0.6776,
+  "category_macro_f1": 0.4716,
+  "category_acc_on_detected": 0.75,
+  "f1_ci": [
+   0.44,
+   0.76
+  ],
+  "thr": 0.05
+ },
+ "finbert_aug_ens3@0.5": {
+  "risk_precision": 0.65,
+  "risk_recall": 0.8125,
+  "risk_f1": 0.7222,
+  "risk_pr_auc": 0.7348,
+  "category_macro_f1": 0.5135,
+  "category_acc_on_detected": 0.7692,
+  "f1_ci": [
+   0.53,
+   0.87
+  ],
+  "thr": 0.5
+ },
+ "finbert_aug_ens3@tuned": {
+  "risk_precision": 0.4828,
+  "risk_recall": 0.875,
+  "risk_f1": 0.6222,
+  "risk_pr_auc": 0.7348,
+  "category_macro_f1": 0.4105,
+  "category_acc_on_detected": 0.7143,
+  "f1_ci": [
+   0.44,
+   0.77
+  ],
+  "thr": 0.07
+ },
+ "finbert_ens3@0.5": {
+  "risk_precision": 0.6111,
+  "risk_recall": 0.6875,
+  "risk_f1": 0.6471,
+  "risk_pr_auc": 0.6907,
+  "category_macro_f1": 0.4276,
+  "category_acc_on_detected": 0.7273,
+  "f1_ci": [
+   0.43,
+   0.81
+  ],
+  "thr": 0.5
+ },
+ "finbert_ens3@tuned": {
+  "risk_precision": 0.4242,
+  "risk_recall": 0.875,
+  "risk_f1": 0.5714,
+  "risk_pr_auc": 0.6907,
+  "category_macro_f1": 0.4143,
+  "category_acc_on_detected": 0.7857,
+  "f1_ci": [
+   0.39,
+   0.72
+  ],
+  "thr": 0.07
+ },
+ "finbert_shipped_s42@0.5": {
+  "risk_precision": 0.6364,
+  "risk_recall": 0.875,
+  "risk_f1": 0.7368,
+  "risk_pr_auc": 0.7293,
+  "category_macro_f1": 0.6129,
+  "category_acc_on_detected": 0.8571,
+  "f1_ci": [
+   0.56,
+   0.88
+  ],
+  "thr": 0.5
+ }
+}

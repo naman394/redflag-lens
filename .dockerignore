@@ -1,0 +1,7 @@
+.venv
+.env
+data/raw
+data/interim
+logs
+reports/preds
+**/__pycache__

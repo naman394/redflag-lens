@@ -1,0 +1,12 @@
+{"sentence_id": "MARUTI_FY2019_02360", "is_risk": 1, "category": "Financial", "specificity": "Generic", "annotator": "hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4"}
+{"sentence_id": "TCS_FY2019_02286", "is_risk": 1, "category": "Financial", "specificity": "Generic", "annotator": "hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4"}
+{"sentence_id": "MARUTI_FY2019_02010", "is_risk": 1, "category": "Legal", "specificity": "Generic", "annotator": "hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4"}
+{"sentence_id": "MARUTI_FY2019_01392", "is_risk": 0, "category": "None", "specificity": "None", "annotator": "hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4"}
+{"sentence_id": "TCS_FY2019_02875", "is_risk": 1, "category": "Financial", "specificity": "Generic", "annotator": "hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4"}
+{"sentence_id": "YESBANK_FY2019_02038", "is_risk": 0, "category": "None", "specificity": "None", "annotator": "hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4"}
+{"sentence_id": "SUNPHARMA_FY2019_02721", "is_risk": 0, "category": "None", "specificity": "None", "annotator": "hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4"}
+{"sentence_id": "SUNPHARMA_FY2019_02346", "is_risk": 1, "category": "Legal", "specificity": "Specific", "annotator": "hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4"}
+{"sentence_id": "SUNPHARMA_FY2019_02334", "is_risk": 0, "category": "None", "specificity": "None", "annotator": "hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4"}
+{"sentence_id": "JETAIRWAYS_FY2018_00324", "is_risk": 1, "category": "Regulatory", "specificity": "Generic", "annotator": "hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4"}
+{"sentence_id": "SUNPHARMA_FY2019_02723", "is_risk": 0, "category": "None", "specificity": "None", "annotator": "hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4"}
+{"sentence_id": "SUNPHARMA_FY2019_03108", "is_risk": 0, "category": "None", "specificity": "None", "annotator": "hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4"}

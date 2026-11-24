@@ -1,0 +1,5 @@
+{
+ "flags_per_1000_sentences": 0.5,
+ "specific_per_1000": 0.625,
+ "severe_per_1000": 0.938
+}

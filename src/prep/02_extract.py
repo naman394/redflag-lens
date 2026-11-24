@@ -14,8 +14,8 @@ a page keeps the previous page's section until a new heading appears.
 """
 import collections, csv, json, re, unicodedata
 from pathlib import Path
-
 import pymupdf
+
 
 ROOT = Path(__file__).resolve().parents[2]
 INBOX = ROOT / "data/raw/inbox"
@@ -86,6 +86,87 @@ def is_table_like(text: str) -> bool:
     return digits > 0.25 * max(len(text), 1) or letters < 0.5 * max(len(text), 1) or len(words) < 4
 
 
+def extract_doc(doc, meta: dict):
+    """Yield cleaned, section-tagged text blocks for one opened PDF. Returns section page counts at the end."""
+    # pass 1: collect pages and find lines repeated on many pages (running headers/footers)
+    pages, line_counts = [], collections.Counter()
+    for page in doc:
+        d = page.get_text("dict")
+        h = page.rect.height
+        blocks = []
+        for b in d["blocks"]:
+            if b.get("type") != 0:
+                continue
+            raw, size, bold = block_text(b)
+            y0, y1 = b["bbox"][1], b["bbox"][3]
+            blocks.append({"raw": raw, "size": size, "bold": bold, "margin": y1 < 0.07 * h or y0 > 0.93 * h})
+        pages.append(blocks)
+        for key in {normalise(bl["raw"]).lower() for bl in blocks if len(bl["raw"]) < 120}:
+            line_counts[key] += 1
+    repeated = {k for k, c in line_counts.items() if c >= max(5, 0.15 * len(pages))}
+
+    # pass 2: section tagging + cleaning
+    section, scope, seen = "FRONT", "standalone", collections.Counter()
+    for pno, blocks in enumerate(pages, start=1):
+        sizes = sorted(bl["size"] for bl in blocks if bl["raw"].strip())
+        body = sizes[len(sizes) // 2] if sizes else 10
+        titles = [normalise(bl["raw"]) for bl in blocks
+                  if bl["margin"] or bl["size"] >= 1.25 * body or (bl["bold"] and len(bl["raw"]) < 150)
+                  or normalise(bl["raw"]).lower() in repeated]
+        titles = [t for t in titles if len(t) < 200]
+        title_text = " | ".join(titles)
+
+        # a heading must match near the start of a title block, not inside a sentence
+        hits = []
+        for t in titles:
+            for name, rx in SECTION_RES:
+                m = rx.search(t)
+                if m and m.start() <= 15:
+                    hits.append(name)
+                    break
+        if not hits and section in {"AUDITOR_REPORT", "CARO", "IFC_REPORT"}:
+            body_text = " ".join(normalise(bl["raw"]) for bl in blocks)
+            if section != "IFC_REPORT" and IFC_BODY_RE.search(body_text[:1500]):
+                hits = ["IFC_REPORT"]
+            elif section != "CARO" and CARO_BODY_RE.search(body_text):
+                hits = ["CARO"]
+        if len(set(hits)) >= 4:                       # table-of-contents page
+            page_section = "TOC"
+        else:
+            if hits:
+                # most specific section wins (earliest in SECTION_PATTERNS)
+                order = [n for n, _ in SECTION_PATTERNS]
+                section = min(hits, key=order.index)
+            page_section = section
+        if re.search(r"consolidated", title_text, re.I) and page_section in {"AUDITOR_REPORT", "CARO", "IFC_REPORT", "NOTES", "FIN_STATEMENTS"}:
+            scope = "consolidated"
+        elif hits and page_section in {"BOARDS_REPORT", "MDA", "CORP_GOV", "NOTICE", "BRR"}:
+            scope = "standalone"
+        elif hits and page_section in {"AUDITOR_REPORT", "NOTES", "FIN_STATEMENTS"} and not re.search(r"consolidated", title_text, re.I):
+            scope = "standalone"
+        seen[page_section] += 1
+
+        in_contingent = False
+        for bno, bl in enumerate(blocks):
+            text = normalise(bl["raw"])
+            if not text or bl["margin"] or text.lower() in repeated:
+                continue
+            sub = page_section
+            if page_section == "NOTES":
+                if CONTINGENT_RE.search(text[:120]):
+                    in_contingent = True
+                elif NOTE_HEADING_RE.match(text) and not CONTINGENT_RE.search(text):
+                    in_contingent = False
+                if in_contingent:
+                    sub = "NOTES_CONTINGENT"
+            yield {
+                "company": meta["company"], "fy": meta["fy"], "group": meta["group"],
+                "page": pno, "block_no": bno, "section": sub, "scope": scope,
+                "text": text, "is_table": is_table_like(text),
+            }
+    return seen
+
+
 def main() -> None:
     manifest = {r["file"]: r for r in csv.DictReader(open(ROOT / "data/raw/manifest.csv"))}
     OUT.parent.mkdir(parents=True, exist_ok=True)
@@ -96,87 +177,18 @@ def main() -> None:
             if meta["text_layer"] != "Y":
                 continue
             doc = pymupdf.open(INBOX / fname)
-
-            # pass 1: collect pages and find lines repeated on many pages (running headers/footers)
-            pages, line_counts = [], collections.Counter()
-            for page in doc:
-                d = page.get_text("dict")
-                h = page.rect.height
-                blocks = []
-                for b in d["blocks"]:
-                    if b.get("type") != 0:
-                        continue
-                    raw, size, bold = block_text(b)
-                    y0, y1 = b["bbox"][1], b["bbox"][3]
-                    blocks.append({"raw": raw, "size": size, "bold": bold, "margin": y1 < 0.07 * h or y0 > 0.93 * h})
-                pages.append(blocks)
-                for key in {normalise(bl["raw"]).lower() for bl in blocks if len(bl["raw"]) < 120}:
-                    line_counts[key] += 1
-            repeated = {k for k, c in line_counts.items() if c >= max(5, 0.15 * len(pages))}
-
-            # pass 2: section tagging + cleaning
-            section, scope, seen = "FRONT", "standalone", collections.Counter()
-            for pno, blocks in enumerate(pages, start=1):
-                sizes = sorted(bl["size"] for bl in blocks if bl["raw"].strip())
-                body = sizes[len(sizes) // 2] if sizes else 10
-                titles = [normalise(bl["raw"]) for bl in blocks
-                          if bl["margin"] or bl["size"] >= 1.25 * body or (bl["bold"] and len(bl["raw"]) < 150)
-                          or normalise(bl["raw"]).lower() in repeated]
-                titles = [t for t in titles if len(t) < 200]
-                title_text = " | ".join(titles)
-
-                # a heading must match near the start of a title block, not inside a sentence
-                hits = []
-                for t in titles:
-                    for name, rx in SECTION_RES:
-                        m = rx.search(t)
-                        if m and m.start() <= 15:
-                            hits.append(name)
-                            break
-                if not hits and section in {"AUDITOR_REPORT", "CARO", "IFC_REPORT"}:
-                    body_text = " ".join(normalise(bl["raw"]) for bl in blocks)
-                    if section != "IFC_REPORT" and IFC_BODY_RE.search(body_text[:1500]):
-                        hits = ["IFC_REPORT"]
-                    elif section != "CARO" and CARO_BODY_RE.search(body_text):
-                        hits = ["CARO"]
-                if len(set(hits)) >= 4:                       # table-of-contents page
-                    page_section = "TOC"
-                else:
-                    if hits:
-                        # most specific section wins (earliest in SECTION_PATTERNS)
-                        order = [n for n, _ in SECTION_PATTERNS]
-                        section = min(hits, key=order.index)
-                    page_section = section
-                if re.search(r"consolidated", title_text, re.I) and page_section in {"AUDITOR_REPORT", "CARO", "IFC_REPORT", "NOTES", "FIN_STATEMENTS"}:
-                    scope = "consolidated"
-                elif hits and page_section in {"BOARDS_REPORT", "MDA", "CORP_GOV", "NOTICE", "BRR"}:
-                    scope = "standalone"
-                elif hits and page_section in {"AUDITOR_REPORT", "NOTES", "FIN_STATEMENTS"} and not re.search(r"consolidated", title_text, re.I):
-                    scope = "standalone"
-                seen[page_section] += 1
-
-                in_contingent = False
-                for bno, bl in enumerate(blocks):
-                    text = normalise(bl["raw"])
-                    if not text or bl["margin"] or text.lower() in repeated:
-                        continue
-                    sub = page_section
-                    if page_section == "NOTES":
-                        if CONTINGENT_RE.search(text[:120]):
-                            in_contingent = True
-                        elif NOTE_HEADING_RE.match(text) and not CONTINGENT_RE.search(text):
-                            in_contingent = False
-                        if in_contingent:
-                            sub = "NOTES_CONTINGENT"
-                    row = {
-                        "company": meta["company"], "fy": meta["fy"], "group": meta["group"],
-                        "page": pno, "block_no": bno, "section": sub, "scope": scope,
-                        "text": text, "is_table": is_table_like(text),
-                    }
-                    out.write(json.dumps(row, ensure_ascii=False) + "\n")
-                    n_blocks += 1
-            coverage.append({"file": fname, "pages": len(pages), **{k: seen.get(k, 0) for k in dict.fromkeys(n for n, _ in SECTION_PATTERNS)}, "TOC": seen.get("TOC", 0), "FRONT": seen.get("FRONT", 0)})
-            print(f"{fname:28} pages={len(pages):4} " + " ".join(f"{k[:6]}={seen.get(k,0)}" for k in dict.fromkeys(n for n, _ in SECTION_PATTERNS)))
+            gen = extract_doc(doc, meta)
+            while True:
+                try:
+                    row = next(gen)
+                except StopIteration as stop:
+                    seen = stop.value
+                    break
+                out.write(json.dumps(row, ensure_ascii=False) + "\n")
+                n_blocks += 1
+            pages = doc.page_count
+            coverage.append({"file": fname, "pages": pages, **{k: seen.get(k, 0) for k in dict.fromkeys(n for n, _ in SECTION_PATTERNS)}, "TOC": seen.get("TOC", 0), "FRONT": seen.get("FRONT", 0)})
+            print(f"{fname:28} pages={pages:4} " + " ".join(f"{k[:6]}={seen.get(k,0)}" for k in dict.fromkeys(n for n, _ in SECTION_PATTERNS)))
 
     with open(STATS, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(coverage[0]))

@@ -6,6 +6,7 @@ PY=.venv/bin/python
 $PY -W ignore src/prep/01_ingest.py
 $PY -W ignore src/prep/02_extract.py
 $PY -W ignore src/prep/03_sentences.py
+$PY -W ignore src/prep/03b_flag_fragments.py   # adds is_fragment; keeps sentence_ids stable
 # 04 draws the pilot sample; run it only once so pilot labels stay valid:
 [ -f data/annotations/pilot_300_labelled.jsonl ] || $PY -W ignore src/prep/04_split_sample.py
 $PY -W ignore src/prep/05_eda.py > /dev/null

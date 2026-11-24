@@ -70,12 +70,24 @@ Labels (`data/annotations/*.jsonl`): `is_risk (0/1), category (Financial|Legal|R
    - Repairs broken "fi"/"fl" ligatures ("fi led" → "filed") and removes control characters.
    - Keeps sentences of 6–120 words that are mostly letters.
    - Removes **exact duplicates within a report** (standalone vs consolidated notes repeat each other): 16,715 removed.
-4. `04_split_sample.py`: company-wise split and stratified pilot sample.
+4. `03b_flag_fragments.py`: flags table rows, column headers and broken fragments with `is_fragment` / `fragment_reason`. Nothing is deleted, so sentence IDs stay stable; sampling, training and inference skip flagged rows.
+   - **14,684 of 96,792 sentences flagged (15.2%)**: numeric_row 7,728 · header_row 5,765 · no_clause 1,136 · starts_with_punct 55.
+   - Checked on the 300 pilot labels: catches 81% of BAD_EXTRACTION rows, flags **0 risk sentences**; every other flagged pilot row is a heading, name or address, not content.
+   - Known gap: 833 flagged rows contain risk keywords. Most are rows of contingent-liability and CARO disputed-dues tables ("Corporate guarantees … 427.31 479.55"). They are real red-flag amounts but tabular, so they go to a later table/amount extractor rather than the sentence classifier.
+5. `04_split_sample.py`: company-wise split and stratified pilot sample.
 
 ## 6. Labelling
-- **Guide:** `data/annotations/guide.md` (v1.1). Decision rules for each category, tie-breakers, and Specific vs Generic.
+- **Guide:** `data/annotations/guide.md` (v1.2). Decision rules for each category, tie-breakers, and Specific vs Generic.
 - **Pilot (done):** 300 sentences from train/val companies, sampled 40% from high-signal sections, 20% by keyword match and 40% at random. Labelled by an LLM (Claude) applying the guide. These labels are **pre-labels to be reviewed by humans**, not gold labels.
-- **Agreement (in progress):** 100 pilot sentences exported blind (`pilot_100_blind_for_humans.xlsx`) for team members to label independently. `06_agreement.py` then computes Cohen's kappa. Target ≥ 0.6.
+- **Agreement (done, 2026-11-24):** the 100 blind pilot sentences were labelled again by an independent second LLM annotator from a different vendor (Google `gemini-4-neon`) that saw only the guide, never the pilot labels (`src/prep/07_llm_second_annotator.py`). The 2 disagreements were adjudicated by the team (`disagreements_llm2_gemini-4-neon.csv`) and led to guide v1.2.
+
+  | Field | Cohen's κ (LLM–LLM) | Raw agreement |
+  |---|---|---|
+  | is_risk | 0.942 | 99% |
+  | category | 0.888 | 98% |
+  | specificity | 0.942 | 99% |
+
+  *Caveats:* this is agreement between two LLMs with human adjudication, **not** human–human κ. Only ~10 of the 100 sentences are risk sentences, so κ rests on few positives and much of the agreement is on easy non-risk sentences. The human-only test-set labels (below) remain the gold standard.
 - **Full plan (M3):** ~2,200 sentences. Train/val are pre-labelled by the LLM, then corrected by humans. The **test set is labelled by humans only**, to avoid anchoring on LLM suggestions.
 
 ### Pilot results (n = 300)
@@ -86,7 +98,24 @@ Labels (`data/annotations/*.jsonl`): `is_risk (0/1), category (Financial|Legal|R
 | Risk rate by group | **distressed 23.5% vs healthy 6.4%** (χ² = 16.6, p < 0.001) |
 | Categories | Financial 14 · Legal 9 · Regulatory 7 · Operational 4 · Business 2 |
 | Specificity | Specific 32 · Generic 4 (high-signal sections are mostly specific) |
-| Extraction errors | 22 / 300 (7.3%), mostly table fragments → next cleaning target |
+| Extraction errors | 22 / 300 (7.3%), mostly table fragments → now flagged by `03b_flag_fragments.py` |
+
+### Dataset v1.0 (frozen 2026-11-24, `data/labels/v1.0/`)
+No human labelling time was available, so v1.0 uses independent LLM annotators. The test set is graded only where annotators from two vendors agree.
+
+| Split | Sentences | Risk | Labelled by |
+|---|---|---|---|
+| train | 1,590 | 211 | pilot (Claude, adjudicated) + `gemini-4-neon`, guide v1.2 |
+| val | 260 | 30 | same |
+| test | 300 | 16 | Claude and `gemini-4-argon` independently; 4 disagreements settled by `gemini-4-carbon` (majority) |
+
+- **Test agreement**, Claude vs argon: κ = 0.904 (is_risk), 0.874 (category), 0.905 (specificity).
+- The training labeller never saw the test set.
+- **Sampling:** fragments excluded; 35% high-signal sections, 25% keyword hits, 40% random. This over-samples risk compared with a whole report.
+- **Not labelled:** 350 of the 1,900 sampled train/val sentences, because the Gemini credit ran out.
+- **Limitation:** these are LLM labels, not human gold. Systematic errors shared by the models would not show up.
+
+Scripts: `src/label/build_sets.py` → `src/label/llm_label.py` → `src/label/consensus.py`. Agreement stats: `reports/label_agreement.json`.
 
 ## 7. Statistics and known issues
 - **Keyword rules are not enough** (`reports/figures/04`):
@@ -117,4 +146,14 @@ Labels (`data/annotations/*.jsonl`): `is_risk (0/1), category (Financial|Legal|R
 - Labels and code: for academic use within the course.
 
 ## 10. Maintenance
-Version tags: `v0.1` = pilot (this card); `v1.0` = gold labels frozen at the end of M3 week 2. Contact: project team.
+Version tags: `v0.1` = pilot; `v1.0` = LLM-consensus labels frozen 2026-11-24 (above). Contact: project team.
+
+
+## Dataset v1.1 (test-set extension)
+- **Test set:** grows from 300 to **600 sentences (37 risk)**. 300 new sentences from the same 5 test companies, with the same stratified sampling (seed 8), excluding v1.0 test sentences (`src/label/build_test_ext.py`).
+- **Labels for the extension:**
+  - Claude, and Qwen2.5-32B-Instruct-AWQ, labelling independently;
+  - Llama-3.1-70B-Instruct-AWQ breaks ties on the 12 disagreements;
+  - agreement on is_risk: 96.7%, κ = 0.755.
+- **Train and val are unchanged.**
+- **Files:** `data/labels/v1.1/`, plus the raw annotations `data/labels/test_ext.{claude,qwen32b,tiebreak}.jsonl`.

@@ -1,0 +1,103 @@
+[finbert s42] epoch 1: loss 132.06 val {'risk_precision': 0.5789, 'risk_recall': 0.3667, 'risk_f1': 0.449, 'risk_pr_auc': 0.5373}
+[finbert s42] epoch 2: loss 81.86 val {'risk_precision': 0.8095, 'risk_recall': 0.5667, 'risk_f1': 0.6667, 'risk_pr_auc': 0.6998}
+[finbert s42] epoch 3: loss 50.68 val {'risk_precision': 0.76, 'risk_recall': 0.6333, 'risk_f1': 0.6909, 'risk_pr_auc': 0.7199}
+[finbert s42] epoch 4: loss 32.01 val {'risk_precision': 0.8095, 'risk_recall': 0.5667, 'risk_f1': 0.6667, 'risk_pr_auc': 0.7334}
+RESULT {"name": "finbert", "seed": 42, "val": {"risk_precision": 0.8095, "risk_recall": 0.5667, "risk_f1": 0.6667, "risk_pr_auc": 0.7334, "category_macro_f1": 0.5769, "category_acc_on_detected": 0.8824}, "test": {"risk_precision": 0.5714, "risk_recall": 0.75, "risk_f1": 0.6486, "risk_pr_auc": 0.6812, "category_macro_f1": 0.5235, "category_acc_on_detected": 0.8333}}
+[debv3b s42] epoch 1: loss 136.19 val {'risk_precision': 0.6471, 'risk_recall': 0.7333, 'risk_f1': 0.6875, 'risk_pr_auc': 0.6577}
+[debv3b s42] epoch 2: loss 105.50 val {'risk_precision': 0.6071, 'risk_recall': 0.5667, 'risk_f1': 0.5862, 'risk_pr_auc': 0.6991}
+[debv3b s42] epoch 3: loss 78.07 val {'risk_precision': 0.8696, 'risk_recall': 0.6667, 'risk_f1': 0.7547, 'risk_pr_auc': 0.8506}
+[debv3b s42] epoch 4: loss 58.14 val {'risk_precision': 0.9091, 'risk_recall': 0.6667, 'risk_f1': 0.7692, 'risk_pr_auc': 0.8493}
+[debv3b s42] epoch 5: loss 44.91 val {'risk_precision': 0.88, 'risk_recall': 0.7333, 'risk_f1': 0.8, 'risk_pr_auc': 0.8767}
+RESULT {"name": "debv3b", "seed": 42, "val": {"risk_precision": 0.88, "risk_recall": 0.7333, "risk_f1": 0.8, "risk_pr_auc": 0.8767, "category_macro_f1": 0.6538, "category_acc_on_detected": 0.8182}, "test": {"risk_precision": 0.5556, "risk_recall": 0.9375, "risk_f1": 0.6977, "risk_pr_auc": 0.6508, "category_macro_f1": 0.5037, "category_acc_on_detected": 0.7333}}
+[finbert_aug s42] epoch 1: loss 182.49 val {'risk_precision': 0.4615, 'risk_recall': 0.8, 'risk_f1': 0.5854, 'risk_pr_auc': 0.6248}
+[finbert_aug s42] epoch 2: loss 106.11 val {'risk_precision': 0.5952, 'risk_recall': 0.8333, 'risk_f1': 0.6944, 'risk_pr_auc': 0.7309}
+[finbert_aug s42] epoch 3: loss 68.20 val {'risk_precision': 0.7857, 'risk_recall': 0.7333, 'risk_f1': 0.7586, 'risk_pr_auc': 0.7858}
+[finbert_aug s42] epoch 4: loss 38.82 val {'risk_precision': 0.875, 'risk_recall': 0.7, 'risk_f1': 0.7778, 'risk_pr_auc': 0.7979}
+RESULT {"name": "finbert_aug", "seed": 42, "val": {"risk_precision": 0.875, "risk_recall": 0.7, "risk_f1": 0.7778, "risk_pr_auc": 0.7979, "category_macro_f1": 0.6342, "category_acc_on_detected": 0.8095}, "test": {"risk_precision": 0.6, "risk_recall": 0.75, "risk_f1": 0.6667, "risk_pr_auc": 0.6434, "category_macro_f1": 0.5123, "category_acc_on_detected": 0.8333}}
+[debv3b_aug s42] epoch 1: loss 183.38 val {'risk_precision': 0.25, 'risk_recall': 0.1667, 'risk_f1': 0.2, 'risk_pr_auc': 0.2714}
+[debv3b_aug s42] epoch 2: loss 138.13 val {'risk_precision': 0.5946, 'risk_recall': 0.7333, 'risk_f1': 0.6567, 'risk_pr_auc': 0.7206}
+[debv3b_aug s42] epoch 3: loss 108.57 val {'risk_precision': 0.6053, 'risk_recall': 0.7667, 'risk_f1': 0.6765, 'risk_pr_auc': 0.7622}
+[debv3b_aug s42] epoch 4: loss 81.83 val {'risk_precision': 0.7333, 'risk_recall': 0.7333, 'risk_f1': 0.7333, 'risk_pr_auc': 0.7799}
+[debv3b_aug s42] epoch 5: loss 65.17 val {'risk_precision': 0.8077, 'risk_recall': 0.7, 'risk_f1': 0.75, 'risk_pr_auc': 0.782}
+RESULT {"name": "debv3b_aug", "seed": 42, "val": {"risk_precision": 0.8077, "risk_recall": 0.7, "risk_f1": 0.75, "risk_pr_auc": 0.782, "category_macro_f1": 0.5764, "category_acc_on_detected": 0.7619}, "test": {"risk_precision": 0.6667, "risk_recall": 0.75, "risk_f1": 0.7059, "risk_pr_auc": 0.5973, "category_macro_f1": 0.5238, "category_acc_on_detected": 0.75}}
+[finbert s1] epoch 1: loss 120.76 val {'risk_precision': 0.7647, 'risk_recall': 0.4333, 'risk_f1': 0.5532, 'risk_pr_auc': 0.6883}
+[finbert s1] epoch 2: loss 83.42 val {'risk_precision': 0.7273, 'risk_recall': 0.5333, 'risk_f1': 0.6154, 'risk_pr_auc': 0.6872}
+[finbert s1] epoch 3: loss 52.13 val {'risk_precision': 0.75, 'risk_recall': 0.6, 'risk_f1': 0.6667, 'risk_pr_auc': 0.7532}
+[finbert s1] epoch 4: loss 33.00 val {'risk_precision': 0.8261, 'risk_recall': 0.6333, 'risk_f1': 0.717, 'risk_pr_auc': 0.7755}
+RESULT {"name": "finbert", "seed": 1, "val": {"risk_precision": 0.8261, "risk_recall": 0.6333, "risk_f1": 0.717, "risk_pr_auc": 0.7755, "category_macro_f1": 0.5127, "category_acc_on_detected": 0.7368}, "test": {"risk_precision": 0.5909, "risk_recall": 0.8125, "risk_f1": 0.6842, "risk_pr_auc": 0.6532, "category_macro_f1": 0.4845, "category_acc_on_detected": 0.7692}}
+[debv3b s1] epoch 1: loss 132.88 val {'risk_precision': 0.0, 'risk_recall': 0.0, 'risk_f1': 0.0, 'risk_pr_auc': 0.4739}
+[debv3b s1] epoch 2: loss 106.93 val {'risk_precision': 0.5217, 'risk_recall': 0.8, 'risk_f1': 0.6316, 'risk_pr_auc': 0.736}
+[debv3b s1] epoch 3: loss 73.29 val {'risk_precision': 0.85, 'risk_recall': 0.5667, 'risk_f1': 0.68, 'risk_pr_auc': 0.7841}
+[debv3b s1] epoch 4: loss 53.81 val {'risk_precision': 0.7143, 'risk_recall': 0.8333, 'risk_f1': 0.7692, 'risk_pr_auc': 0.8603}
+[debv3b s1] epoch 5: loss 41.47 val {'risk_precision': 0.9091, 'risk_recall': 0.6667, 'risk_f1': 0.7692, 'risk_pr_auc': 0.8419}
+RESULT {"name": "debv3b", "seed": 1, "val": {"risk_precision": 0.9091, "risk_recall": 0.6667, "risk_f1": 0.7692, "risk_pr_auc": 0.8419, "category_macro_f1": 0.5781, "category_acc_on_detected": 0.75}, "test": {"risk_precision": 0.5909, "risk_recall": 0.8125, "risk_f1": 0.6842, "risk_pr_auc": 0.6654, "category_macro_f1": 0.4655, "category_acc_on_detected": 0.6923}}
+[finbert_aug s1] epoch 1: loss 156.20 val {'risk_precision': 0.6571, 'risk_recall': 0.7667, 'risk_f1': 0.7077, 'risk_pr_auc': 0.6681}
+[finbert_aug s1] epoch 2: loss 94.85 val {'risk_precision': 0.8667, 'risk_recall': 0.4333, 'risk_f1': 0.5778, 'risk_pr_auc': 0.7851}
+[finbert_aug s1] epoch 3: loss 60.09 val {'risk_precision': 0.8824, 'risk_recall': 0.5, 'risk_f1': 0.6383, 'risk_pr_auc': 0.7967}
+[finbert_aug s1] epoch 4: loss 38.24 val {'risk_precision': 0.9048, 'risk_recall': 0.6333, 'risk_f1': 0.7451, 'risk_pr_auc': 0.8256}
+RESULT {"name": "finbert_aug", "seed": 1, "val": {"risk_precision": 0.9048, "risk_recall": 0.6333, "risk_f1": 0.7451, "risk_pr_auc": 0.8256, "category_macro_f1": 0.6148, "category_acc_on_detected": 0.8947}, "test": {"risk_precision": 0.6842, "risk_recall": 0.8125, "risk_f1": 0.7429, "risk_pr_auc": 0.727, "category_macro_f1": 0.5337, "category_acc_on_detected": 0.7692}}
+[debv3b_aug s1] epoch 1: loss 170.13 val {'risk_precision': 0.4643, 'risk_recall': 0.8667, 'risk_f1': 0.6047, 'risk_pr_auc': 0.8304}
+[debv3b_aug s1] epoch 2: loss 125.78 val {'risk_precision': 0.9375, 'risk_recall': 0.5, 'risk_f1': 0.6522, 'risk_pr_auc': 0.8025}
+[debv3b_aug s1] epoch 3: loss 86.75 val {'risk_precision': 0.9444, 'risk_recall': 0.5667, 'risk_f1': 0.7083, 'risk_pr_auc': 0.8696}
+[debv3b_aug s1] epoch 4: loss 62.97 val {'risk_precision': 1.0, 'risk_recall': 0.6, 'risk_f1': 0.75, 'risk_pr_auc': 0.8805}
+[debv3b_aug s1] epoch 5: loss 45.88 val {'risk_precision': 1.0, 'risk_recall': 0.5667, 'risk_f1': 0.7234, 'risk_pr_auc': 0.848}
+RESULT {"name": "debv3b_aug", "seed": 1, "val": {"risk_precision": 1.0, "risk_recall": 0.5667, "risk_f1": 0.7234, "risk_pr_auc": 0.848, "category_macro_f1": 0.548, "category_acc_on_detected": 0.7647}, "test": {"risk_precision": 0.7059, "risk_recall": 0.75, "risk_f1": 0.7273, "risk_pr_auc": 0.6798, "category_macro_f1": 0.4205, "category_acc_on_detected": 0.5833}}
+[finbert s2] epoch 1: loss 124.43 val {'risk_precision': 0.5, 'risk_recall': 0.8, 'risk_f1': 0.6154, 'risk_pr_auc': 0.6084}
+[finbert s2] epoch 2: loss 76.18 val {'risk_precision': 0.8421, 'risk_recall': 0.5333, 'risk_f1': 0.6531, 'risk_pr_auc': 0.6721}
+[finbert s2] epoch 3: loss 49.55 val {'risk_precision': 0.8077, 'risk_recall': 0.7, 'risk_f1': 0.75, 'risk_pr_auc': 0.7814}
+[finbert s2] epoch 4: loss 34.02 val {'risk_precision': 0.9412, 'risk_recall': 0.5333, 'risk_f1': 0.6809, 'risk_pr_auc': 0.8373}
+RESULT {"name": "finbert", "seed": 2, "val": {"risk_precision": 0.9412, "risk_recall": 0.5333, "risk_f1": 0.6809, "risk_pr_auc": 0.8373, "category_macro_f1": 0.5379, "category_acc_on_detected": 0.8125}, "test": {"risk_precision": 0.55, "risk_recall": 0.6875, "risk_f1": 0.6111, "risk_pr_auc": 0.689, "category_macro_f1": 0.4323, "category_acc_on_detected": 0.7273}}
+[debv3b s2] epoch 1: loss 138.35 val {'risk_precision': 1.0, 'risk_recall': 0.1, 'risk_f1': 0.1818, 'risk_pr_auc': 0.6627}
+[debv3b s2] epoch 2: loss 107.09 val {'risk_precision': 0.8824, 'risk_recall': 0.5, 'risk_f1': 0.6383, 'risk_pr_auc': 0.7385}
+[debv3b s2] epoch 3: loss 71.28 val {'risk_precision': 0.7667, 'risk_recall': 0.7667, 'risk_f1': 0.7667, 'risk_pr_auc': 0.8291}
+[debv3b s2] epoch 4: loss 55.09 val {'risk_precision': 0.8696, 'risk_recall': 0.6667, 'risk_f1': 0.7547, 'risk_pr_auc': 0.8201}
+[debv3b s2] epoch 5: loss 42.90 val {'risk_precision': 0.9, 'risk_recall': 0.6, 'risk_f1': 0.72, 'risk_pr_auc': 0.8312}
+RESULT {"name": "debv3b", "seed": 2, "val": {"risk_precision": 0.9, "risk_recall": 0.6, "risk_f1": 0.72, "risk_pr_auc": 0.8312, "category_macro_f1": 0.6101, "category_acc_on_detected": 0.8889}, "test": {"risk_precision": 0.65, "risk_recall": 0.8125, "risk_f1": 0.7222, "risk_pr_auc": 0.6777, "category_macro_f1": 0.5374, "category_acc_on_detected": 0.7692}}
+[finbert_aug s2] epoch 1: loss 159.18 val {'risk_precision': 0.8333, 'risk_recall': 0.1667, 'risk_f1': 0.2778, 'risk_pr_auc': 0.6066}
+[finbert_aug s2] epoch 2: loss 99.17 val {'risk_precision': 0.9048, 'risk_recall': 0.6333, 'risk_f1': 0.7451, 'risk_pr_auc': 0.8345}
+[finbert_aug s2] epoch 3: loss 57.59 val {'risk_precision': 0.9444, 'risk_recall': 0.5667, 'risk_f1': 0.7083, 'risk_pr_auc': 0.8319}
+[finbert_aug s2] epoch 4: loss 36.46 val {'risk_precision': 1.0, 'risk_recall': 0.4667, 'risk_f1': 0.6364, 'risk_pr_auc': 0.8435}
+RESULT {"name": "finbert_aug", "seed": 2, "val": {"risk_precision": 1.0, "risk_recall": 0.4667, "risk_f1": 0.6364, "risk_pr_auc": 0.8435, "category_macro_f1": 0.5443, "category_acc_on_detected": 0.8571}, "test": {"risk_precision": 0.7222, "risk_recall": 0.8125, "risk_f1": 0.7647, "risk_pr_auc": 0.6531, "category_macro_f1": 0.6313, "category_acc_on_detected": 0.8462}}
+[debv3b_aug s2] epoch 1: loss 176.46 val {'risk_precision': 1.0, 'risk_recall': 0.0333, 'risk_f1': 0.0645, 'risk_pr_auc': 0.5519}
+[debv3b_aug s2] epoch 2: loss 139.37 val {'risk_precision': 0.8947, 'risk_recall': 0.5667, 'risk_f1': 0.6939, 'risk_pr_auc': 0.7751}
+[debv3b_aug s2] epoch 3: loss 98.20 val {'risk_precision': 1.0, 'risk_recall': 0.3, 'risk_f1': 0.4615, 'risk_pr_auc': 0.7792}
+[debv3b_aug s2] epoch 4: loss 69.56 val {'risk_precision': 0.9048, 'risk_recall': 0.6333, 'risk_f1': 0.7451, 'risk_pr_auc': 0.8426}
+[debv3b_aug s2] epoch 5: loss 51.46 val {'risk_precision': 0.9545, 'risk_recall': 0.7, 'risk_f1': 0.8077, 'risk_pr_auc': 0.857}
+RESULT {"name": "debv3b_aug", "seed": 2, "val": {"risk_precision": 0.9545, "risk_recall": 0.7, "risk_f1": 0.8077, "risk_pr_auc": 0.857, "category_macro_f1": 0.6289, "category_acc_on_detected": 0.8095}, "test": {"risk_precision": 0.6, "risk_recall": 0.75, "risk_f1": 0.6667, "risk_pr_auc": 0.6555, "category_macro_f1": 0.4923, "category_acc_on_detected": 0.75}}
+[debv3l s42] epoch 1: loss 141.99 val {'risk_precision': 0.0, 'risk_recall': 0.0, 'risk_f1': 0.0, 'risk_pr_auc': 0.2881}
+[debv3l s42] epoch 2: loss 105.06 val {'risk_precision': 0.8889, 'risk_recall': 0.5333, 'risk_f1': 0.6667, 'risk_pr_auc': 0.7788}
+[debv3l s42] epoch 3: loss 73.66 val {'risk_precision': 0.8519, 'risk_recall': 0.7667, 'risk_f1': 0.807, 'risk_pr_auc': 0.7756}
+[debv3l s42] epoch 4: loss 57.08 val {'risk_precision': 0.8333, 'risk_recall': 0.6667, 'risk_f1': 0.7407, 'risk_pr_auc': 0.8461}
+[debv3l s42] epoch 5: loss 42.52 val {'risk_precision': 0.95, 'risk_recall': 0.6333, 'risk_f1': 0.76, 'risk_pr_auc': 0.8971}
+RESULT {"name": "debv3l", "seed": 42, "val": {"risk_precision": 0.95, "risk_recall": 0.6333, "risk_f1": 0.76, "risk_pr_auc": 0.8971, "category_macro_f1": 0.6739, "category_acc_on_detected": 0.8421}, "test": {"risk_precision": 0.7059, "risk_recall": 0.75, "risk_f1": 0.7273, "risk_pr_auc": 0.7236, "category_macro_f1": 0.6389, "category_acc_on_detected": 0.9167}}
+[debv3l_aug s42] epoch 1: loss 180.98 val {'risk_precision': 0.4528, 'risk_recall': 0.8, 'risk_f1': 0.5783, 'risk_pr_auc': 0.5774}
+[debv3l_aug s42] epoch 2: loss 116.19 val {'risk_precision': 0.6857, 'risk_recall': 0.8, 'risk_f1': 0.7385, 'risk_pr_auc': 0.8273}
+[debv3l_aug s42] epoch 3: loss 88.71 val {'risk_precision': 0.9048, 'risk_recall': 0.6333, 'risk_f1': 0.7451, 'risk_pr_auc': 0.8461}
+[debv3l_aug s42] epoch 4: loss 64.00 val {'risk_precision': 0.9545, 'risk_recall': 0.7, 'risk_f1': 0.8077, 'risk_pr_auc': 0.8658}
+[debv3l_aug s42] epoch 5: loss 45.44 val {'risk_precision': 0.9524, 'risk_recall': 0.6667, 'risk_f1': 0.7843, 'risk_pr_auc': 0.8637}
+RESULT {"name": "debv3l_aug", "seed": 42, "val": {"risk_precision": 0.9524, "risk_recall": 0.6667, "risk_f1": 0.7843, "risk_pr_auc": 0.8637, "category_macro_f1": 0.6921, "category_acc_on_detected": 0.85}, "test": {"risk_precision": 0.7647, "risk_recall": 0.8125, "risk_f1": 0.7879, "risk_pr_auc": 0.8381, "category_macro_f1": 0.6202, "category_acc_on_detected": 0.7692}}
+[debv3l s1] epoch 1: loss 132.14 val {'risk_precision': 0.9091, 'risk_recall': 0.3333, 'risk_f1': 0.4878, 'risk_pr_auc': 0.7816}
+[debv3l s1] epoch 2: loss 87.95 val {'risk_precision': 0.9474, 'risk_recall': 0.6, 'risk_f1': 0.7347, 'risk_pr_auc': 0.8631}
+[debv3l s1] epoch 3: loss 62.61 val {'risk_precision': 0.9091, 'risk_recall': 0.6667, 'risk_f1': 0.7692, 'risk_pr_auc': 0.8033}
+[debv3l s1] epoch 4: loss 47.62 val {'risk_precision': 0.913, 'risk_recall': 0.7, 'risk_f1': 0.7925, 'risk_pr_auc': 0.8625}
+[debv3l s1] epoch 5: loss 38.30 val {'risk_precision': 0.9545, 'risk_recall': 0.7, 'risk_f1': 0.8077, 'risk_pr_auc': 0.8486}
+RESULT {"name": "debv3l", "seed": 1, "val": {"risk_precision": 0.9545, "risk_recall": 0.7, "risk_f1": 0.8077, "risk_pr_auc": 0.8486, "category_macro_f1": 0.5385, "category_acc_on_detected": 0.6667}, "test": {"risk_precision": 0.5455, "risk_recall": 0.75, "risk_f1": 0.6316, "risk_pr_auc": 0.7846, "category_macro_f1": 0.3557, "category_acc_on_detected": 0.5833}}
+[debv3l_aug s1] epoch 1: loss 169.62 val {'risk_precision': 1.0, 'risk_recall': 0.1333, 'risk_f1': 0.2353, 'risk_pr_auc': 0.7786}
+[debv3l_aug s1] epoch 2: loss 117.10 val {'risk_precision': 1.0, 'risk_recall': 0.3667, 'risk_f1': 0.5366, 'risk_pr_auc': 0.7092}
+[debv3l_aug s1] epoch 3: loss 88.70 val {'risk_precision': 0.9474, 'risk_recall': 0.6, 'risk_f1': 0.7347, 'risk_pr_auc': 0.8907}
+[debv3l_aug s1] epoch 4: loss 64.49 val {'risk_precision': 0.84, 'risk_recall': 0.7, 'risk_f1': 0.7636, 'risk_pr_auc': 0.8577}
+[debv3l_aug s1] epoch 5: loss 52.68 val {'risk_precision': 0.9091, 'risk_recall': 0.6667, 'risk_f1': 0.7692, 'risk_pr_auc': 0.8702}
+RESULT {"name": "debv3l_aug", "seed": 1, "val": {"risk_precision": 0.9091, "risk_recall": 0.6667, "risk_f1": 0.7692, "risk_pr_auc": 0.8702, "category_macro_f1": 0.5095, "category_acc_on_detected": 0.7}, "test": {"risk_precision": 0.6087, "risk_recall": 0.875, "risk_f1": 0.7179, "risk_pr_auc": 0.6975, "category_macro_f1": 0.6104, "category_acc_on_detected": 0.8571}}
+[debv3l s2] epoch 1: loss 142.64 val {'risk_precision': 0.4783, 'risk_recall': 0.3667, 'risk_f1': 0.4151, 'risk_pr_auc': 0.5014}
+[debv3l s2] epoch 2: loss 103.77 val {'risk_precision': 0.6818, 'risk_recall': 0.5, 'risk_f1': 0.5769, 'risk_pr_auc': 0.734}
+[debv3l s2] epoch 3: loss 70.52 val {'risk_precision': 0.4912, 'risk_recall': 0.9333, 'risk_f1': 0.6437, 'risk_pr_auc': 0.8179}
+[debv3l s2] epoch 4: loss 51.44 val {'risk_precision': 0.9524, 'risk_recall': 0.6667, 'risk_f1': 0.7843, 'risk_pr_auc': 0.8989}
+[debv3l s2] epoch 5: loss 38.78 val {'risk_precision': 0.95, 'risk_recall': 0.6333, 'risk_f1': 0.76, 'risk_pr_auc': 0.905}
+RESULT {"name": "debv3l", "seed": 2, "val": {"risk_precision": 0.95, "risk_recall": 0.6333, "risk_f1": 0.76, "risk_pr_auc": 0.905, "category_macro_f1": 0.5797, "category_acc_on_detected": 0.7368}, "test": {"risk_precision": 0.7647, "risk_recall": 0.8125, "risk_f1": 0.7879, "risk_pr_auc": 0.7192, "category_macro_f1": 0.5639, "category_acc_on_detected": 0.7692}}
+[debv3l_aug s2] epoch 1: loss 180.19 val {'risk_precision': 0.0, 'risk_recall': 0.0, 'risk_f1': 0.0, 'risk_pr_auc': 0.4883}
+[debv3l_aug s2] epoch 2: loss 126.49 val {'risk_precision': 0.8065, 'risk_recall': 0.8333, 'risk_f1': 0.8197, 'risk_pr_auc': 0.8213}
+[debv3l_aug s2] epoch 3: loss 89.18 val {'risk_precision': 0.8, 'risk_recall': 0.5333, 'risk_f1': 0.64, 'risk_pr_auc': 0.7928}
+[debv3l_aug s2] epoch 4: loss 62.66 val {'risk_precision': 0.92, 'risk_recall': 0.7667, 'risk_f1': 0.8364, 'risk_pr_auc': 0.8619}
+[debv3l_aug s2] epoch 5: loss 49.35 val {'risk_precision': 0.8846, 'risk_recall': 0.7667, 'risk_f1': 0.8214, 'risk_pr_auc': 0.8717}
+RESULT {"name": "debv3l_aug", "seed": 2, "val": {"risk_precision": 0.8846, "risk_recall": 0.7667, "risk_f1": 0.8214, "risk_pr_auc": 0.8717, "category_macro_f1": 0.5833, "category_acc_on_detected": 0.7826}, "test": {"risk_precision": 0.6667, "risk_recall": 0.875, "risk_f1": 0.7568, "risk_pr_auc": 0.7745, "category_macro_f1": 0.5427, "category_acc_on_detected": 0.7143}}
+GRID_DONE

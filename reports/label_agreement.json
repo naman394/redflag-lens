@@ -1,0 +1,33 @@
+{
+  "n_test": 300,
+  "kappa_claude_vs_argon_is_risk": 0.904,
+  "agree_claude_vs_argon_is_risk": 0.99,
+  "kappa_claude_vs_argon_category": 0.874,
+  "agree_claude_vs_argon_category": 0.987,
+  "kappa_claude_vs_argon_specificity": 0.905,
+  "agree_claude_vs_argon_specificity": 0.99,
+  "test_adjudicated": 4,
+  "test_risk": 16,
+  "train_n": 1590,
+  "train_risk": 211,
+  "train_categories": {
+    "Financial": 96,
+    "Regulatory": 48,
+    "Legal": 43,
+    "Operational": 14,
+    "Business": 10
+  },
+  "val_n": 260,
+  "val_risk": 30,
+  "val_categories": {
+    "Financial": 16,
+    "Legal": 7,
+    "Regulatory": 7
+  },
+  "test_n": 300,
+  "test_categories": {
+    "Legal": 6,
+    "Financial": 5,
+    "Regulatory": 5
+  }
+}

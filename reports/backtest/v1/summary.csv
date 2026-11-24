@@ -1,0 +1,6 @@
+report,group,pages,sentences,high_conf_flags,specific_flags,flags_per_1000_sentences,specific_per_1000,review_tier,seconds,cat_Financial,cat_Legal,cat_Regulatory,cat_Business
+GENSOL_FY2024,"distressed (backtest, collapsed 2025)",292,2877,102,64,35.5,22.2,118,124.18,69,2,12,19
+JETAIRWAYS_FY2018,distressed (test),237,1954,118,97,60.4,49.6,113,81.01,63,28,16,11
+YESBANK_FY2019,distressed (test),371,3470,127,112,36.6,32.3,183,138.81,73,6,23,25
+TCS_FY2019,healthy (test),255,2497,103,69,41.2,27.6,80,96.05,59,12,27,5
+MARUTI_FY2019,healthy (test),315,2440,112,72,45.9,29.5,83,92.3,50,22,15,25

@@ -1,4 +1,4 @@
-# Annotation Guide v1 (RedFlag Lens)
+# Annotation Guide v1.2 (RedFlag Lens)
 
 Label **one sentence at a time**. The section name is shown as context. Don't open the PDF unless the sentence is truly unreadable.
 
@@ -35,7 +35,7 @@ Each sentence gets three labels.
 **Tie-breakers**
 - Disputed **tax demands** (income tax, GST, excise) → Regulatory.
 - **Contingent liabilities** from claims by private parties → Legal. Bank guarantees or corporate guarantees given → Financial.
-- Going concern, default, inability to pay → Financial, even if lenders have gone to court (put Legal in `category_2`).
+- Going concern, default, inability to pay → Financial, even if lenders have gone to court (put Legal in `category_2`). **Exception (v1.2):** once a tribunal acts (NCLT/IBC petition admitted, CIRP initiated, liquidation ordered) → **Legal**, with Financial in `category_2`.
 - SEBI order under appeal at SAT → Regulatory (secondary: Legal).
 - Auditor qualification about accounts or records → Financial. About internal controls → Operational.
 - Commodity or raw-material **price** risk → Business. Raw-material **supply** disruption → Operational.
@@ -67,6 +67,11 @@ Decided while labelling the 300-sentence pilot:
 - **Litigation resolved in the company's favour** → 0. Pending appeals or cases → 1, Legal, Specific.
 - **Table rows, page headers, fragments** → 0 with note `BAD_EXTRACTION`. They make up about 7% of the pilot and are the next cleaning target.
 
+## Rules added after the agreement check (v1.2)
+- **Insolvency proceedings** (NCLT/IBC petition admitted, CIRP initiated, resolution professional appointed, liquidation ordered) → 1, **Legal**, Specific, `category_2` = Financial. A default or going-concern doubt *without* tribunal action stays Financial.
+- **Sentence fragments that still name a concrete adverse event** (e.g. "...Insolvency Resolution Process (CIRP) in respect of Tayo Rolls Limited, a subsidiary") → label the event (1), don't mark BAD_EXTRACTION. BAD_EXTRACTION is for text with no readable meaning (table rows, headers).
+
 ## Version history
 - v1 (2026-10-28): first version, used for the 300-sentence pilot.
 - v1.1 (2026-10-28): rules added from pilot decisions (above).
+- v1.2 (2026-11-24): insolvency → Legal; fragments with a concrete event are labelled. From the LLM–LLM agreement check (2 disagreements, adjudicated by the team).

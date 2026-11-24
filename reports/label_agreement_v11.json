@@ -1,0 +1,22 @@
+{
+  "n_ext": 300,
+  "annotator_A": "claude-opus-5-5",
+  "annotator_B": "Qwen/Qwen2.5-32B-Instruct-AWQ",
+  "tiebreaker_C": "hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4",
+  "kappa_A_vs_B_is_risk": 0.755,
+  "agree_A_vs_B_is_risk": 0.967,
+  "kappa_A_vs_B_category": 0.738,
+  "agree_A_vs_B_category": 0.963,
+  "kappa_A_vs_B_specificity": 0.712,
+  "agree_A_vs_B_specificity": 0.96,
+  "ext_adjudicated": 12,
+  "ext_risk": 21,
+  "test600_n": 600,
+  "test600_risk": 37,
+  "test600_categories": {
+    "Legal": 16,
+    "Financial": 12,
+    "Regulatory": 7,
+    "Business": 2
+  }
+}

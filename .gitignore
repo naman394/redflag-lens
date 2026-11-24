@@ -6,3 +6,9 @@ __pycache__/
 *.pyc
 .DS_Store
 ~$*.xlsx
+# trained model weights are too large for GitHub (>100 MB); keep locally / on a drive
+models/finbert/
+models/debv3l_aug/
+reports/probs_v10/
+# runtime monitoring/feedback logs written by the app
+logs/

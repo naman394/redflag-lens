@@ -1,0 +1,3 @@
+300 sentences, 0 already labelled, 30 batches to run with gemini-4-argon
+  200/300
+done -> data/labels/test.gemini-4-argon.jsonl

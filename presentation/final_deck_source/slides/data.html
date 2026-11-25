@@ -1,0 +1,20 @@
+<section id="data" data-transition="fade">
+<div class="head">
+<p class="eyebrow">M2 · Data</p>
+<h2>26 real annual reports from companies that failed and companies that did fine</h2>
+</div>
+<div class="row" style="margin-top:-8px">
+<div class="card rise" style="--i:0;padding:28px 32px"><p class="num">10 + 16</p><p class="lbl">failed + healthy companies, from the BSE archive</p></div>
+<div class="card rise" style="--i:1;padding:28px 32px"><p class="num">96,792</p><p class="lbl">clean sentences from 8,303 pages</p></div>
+<div class="card rise" style="--i:2;padding:28px 32px"><p class="num">27.7%</p><p class="lbl">of text repeats from last year, so we split by company</p></div>
+</div>
+<table class="rise" style="--i:3;font-size:26px">
+<tr><th style="width:18%">Split</th><th style="width:52%">Companies</th><th style="width:30%">Used for</th></tr>
+<tr><td>Train</td><td>16 companies</td><td>teaching the model</td></tr>
+<tr><td>Validation</td><td>RCOM, Titan, NTPC</td><td>choosing settings</td></tr>
+<tr><td>Test</td><td>Jet Airways, Yes Bank, TCS, Maruti, Sun Pharma</td><td>the final exam</td></tr>
+<tr class="hl"><td>Held out</td><td>Gensol FY2024</td><td>never seen, the real-life check</td></tr>
+</table>
+<p class="footer">4 · A company is in only one group, so the model is always tested on companies it has never seen.</p>
+<aside>Our data is 26 real annual reports downloaded from the Bombay Stock Exchange. Ten are from companies that later got into trouble, like Jet Airways, Yes Bank and Reliance Communications, and sixteen are from healthy companies like TCS and Maruti. That is about 8,300 pages and almost 97 thousand sentences after cleaning. One important design choice: we split the data by company, not by sentence. Why? Because about 28 percent of a company’s sentences are copied from the year before. If the same company is in training and testing, the model just remembers the text and the score looks fake-good. So training uses 16 companies, validation three, the test five, and Gensol is kept completely aside as the final real-life check. Think of it as a final exam with questions the student has never seen.</aside>
+</section>

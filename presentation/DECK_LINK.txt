@@ -1,1 +1,3 @@
-https://claude.ai/artifact/NPTo1j9XegdUq3HJ6ok13y
+Final project deck (15 slides, with speaker notes): https://claude.ai/artifact/JZBs8u2zuwK31W2SkBDp3J
+Earlier M1-M2 deck: https://claude.ai/artifact/NPTo1j9XegdUq3HJ6ok13y
+Slide source (HTML): presentation/final_deck_source/

@@ -1,7 +1,7 @@
 # Viva prep: likely questions and short answers
 
 **Why not just give the report to ChatGPT?**
-We tested this. On the 600-sentence test set, an open 7B LLM (Qwen2.5-7B) given the same annotation guide scored F1 0.56. Our fine-tuned FinBERT scored 0.77, and our best model (DeBERTa-v3-large) scored 0.86.
+We did not test ChatGPT or GPT itself. We tested an open LLM: on the 600-sentence test set, Qwen2.5-7B given the same annotation guide scored F1 0.56. Our fine-tuned FinBERT scored 0.77, and our best model (DeBERTa-v3-large) scored 0.86.
 FinBERT is also about 180× faster per sentence (0.7 ms against 126 ms on the same GPU), runs on a laptop CPU, and keeps borrower documents inside the bank.
 We still use an LLM for one job, the short summary, and a verifier drops any claim not supported by its cited sentences.
 
@@ -67,3 +67,6 @@ Cut for time to one LLM summariser plus a rule-based verifier. The verifier is t
 - One Docker image (API + dashboard), on the bank's own servers.
 - A monitoring log per report, with alerts when the finding rate or the share of low-confidence scores drifts.
 - Analyst 👍/👎 votes feed the next training round.
+
+**Did you test it on reports it had never seen at all?**
+Yes. On 25 Nov 2026 we ran two brand-new reports. SpiceJet FY2023 (distressed): 34 severe signs, 13.5 per 1,000 sentences, higher than any backtest report, including the going-concern material uncertainty, the qualified opinion, "unable to pay Rs 750 million" and lessors' IBC petitions (about 6 of the 34 are false alarms from the cargo business transfer "as a going concern"). Nestlé India FY2024 (healthy): 5 severe signs, 1.6 per 1,000, all false alarms (NCLT merger scheme, fraud KAM wording). See TECHNICAL_REPORT §8.1.

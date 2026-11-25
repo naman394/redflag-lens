@@ -12,3 +12,6 @@ models/debv3l_aug/
 reports/probs_v10/
 # runtime monitoring/feedback logs written by the app
 logs/
+
+# new unseen test reports (public filings, 19 MB)
+data/raw/new_test/

@@ -403,3 +403,16 @@ Other true findings appear in the high tier but not the severe tier. One is p.14
 - **The validation companies had been seen before.** RCOM, Titan and NTPC chose the classifier threshold, but not the lexicon.
 
 **Takeaway.** RedFlag Lens is a screening tool. It finds the sentences an analyst should read and lists the most serious ones first. The severe-sign rate is a useful first signal at report level, but 8 reports cannot validate it as a distress predictor.
+
+### 8.1 Fresh test: two reports never used anywhere (25 Nov 2026)
+
+To check the pipeline on documents outside every split, we downloaded two new reports (`data/raw/new_test/`, git-ignored) and ran the app model (FinBERT, no LLM) with `src/eval/new_reports.py`. Output: `reports/backtest/new_unseen/`.
+
+| Report | Group | Pages | Sentences | Flags / 1k | Severe | Severe / 1k | Time |
+|---|---|---|---|---|---|---|---|
+| SpiceJet FY2023 | distressed (airline, negative net worth) | 217 | 2,515 | 128.4 | 34 | **13.52** | 142 s |
+| Nestlé India FY2024 | healthy | 274 | 3,080 | 31.5 | 5 | **1.62** | 123 s |
+
+- **SpiceJet** scores above every report in the 8-report backtest. The severe findings include the auditor's "Material Uncertainty Related to Going Concern" (p.76, p.94, p.148), the qualified opinion (p.80, p.152), "unable to pay Rs. 750.00 million" (p.25), a stay application against the bank declaring the loan NPA (p.118), lessors' Section 9 IBC petitions (p.131) and negative net worth (p.145). About 6 of the 34 are false alarms: the cargo business transfer "as a going concern" (p.25, p.33, p.37, p.132, p.200) and the standard IBC disclosure heading (p.30).
+- **Nestlé** falls in the healthy range. All 5 severe findings are false alarms: an NCLT merger scheme (p.108, p.146), the standard revenue-fraud key audit matter (p.114), a business transfer agreement (p.134) and CARO clause (xix) (p.122).
+- **Lesson:** the severe lexicon should distinguish NCLT *schemes* and business transfers "as a going concern" from insolvency and going-concern *doubt*. We did not change the lexicon after this test.

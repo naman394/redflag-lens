@@ -1,0 +1,20 @@
+<section id="labels" class="alt" data-transition="fade">
+<div class="head">
+<p class="eyebrow">M2 · Labels</p>
+<h2>AI annotators labelled the sentences, and we only trusted them where they agreed</h2>
+</div>
+<div class="row">
+<div class="col rise" style="--i:0">
+<h3>How a sentence got its label</h3>
+<p class="small">1. We wrote a labelling guide: what counts as a risk, which of the 5 types, and whether it is a real event or general wording.</p>
+<p class="small">2. Two AI models from different companies labelled each test sentence on their own.</p>
+<p class="small">3. Where they disagreed, a third model broke the tie.</p>
+<p class="small">4. The model that labelled training data never labelled the test, so the student is not marked by its own teacher.</p>
+</div>
+<div class="col rise" style="--i:1;flex:0 0 640px">
+<div class="card" style="padding:28px 32px"><p class="num" style="font-size:72px">600</p><p class="lbl">test sentences from 5 unseen companies, 37 of them real risks</p></div>
+<div class="card" style="padding:28px 32px"><p class="num" style="font-size:72px">0.90 / 0.76</p><p class="lbl">agreement score (kappa) on the first and second halves of the test set. Above 0.75 is strong.</p></div>
+</div>
+</div>
+<aside>To train and test a model you need labelled examples: this sentence is a risk, this one is not. We did not have time to label thousands of sentences by hand, so we used AI annotators, carefully. First we wrote a clear labelling guide. Then for the test set, two AI models from different companies labelled each sentence independently. Where they disagreed, a third model decided. And the model that labelled the training data never touched the test set, so the model is not graded by its own teacher. The test set has 600 sentences from five companies the model never saw, and 37 of them are real risks. Agreement between annotators was 0.90 on the first half and 0.76 on the second, both counted as strong. The honest limitation: these are not human labels.</aside>
+</section>

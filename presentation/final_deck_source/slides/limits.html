@@ -1,0 +1,24 @@
+<section id="limits" data-transition="fade">
+<div class="head">
+<p class="eyebrow">Honest limits and next steps</p>
+<h2>What we would fix with more time</h2>
+</div>
+<div class="row" style="gap:48px">
+<div class="col rise" style="--i:0">
+<h3>Limits today</h3>
+<p class="small"><b>No human labels.</b> AI annotators agreed strongly (κ 0.76 to 0.90), but errors they share would not show up.</p>
+<p class="small"><b>Small exams.</b> 37 risk sentences in the test and 8 reports in the backtest, so the ranges are wide.</p>
+<p class="small"><b>Weak at risk type.</b> The best model names the type with F1 0.49.</p>
+<p class="small"><b>Severe list has false alarms.</b> Nestlé’s merger and business-transfer wording were wrongly marked severe.</p>
+</div>
+<div class="col rise" style="--i:1">
+<h3>Next steps</h3>
+<p class="small">Have 2 credit analysts label 500 sentences to check the AI labels.</p>
+<p class="small">Backtest on 30+ reports, including banks and other sectors.</p>
+<p class="small">Teach the severe list the difference between a merger at NCLT and an insolvency case.</p>
+<p class="small">Compare with large LLMs such as GPT and Claude on the same 600 sentences.</p>
+</div>
+</div>
+<p class="footer">14 · Full details: docs/TECHNICAL_REPORT.md, Limitations</p>
+<aside>Every project has limits, and we want to be open about ours. First, no human labels: our AI annotators agreed strongly, but if they share a blind spot we would not see it. Second, small exams: 37 risk sentences and 8 backtest reports give wide uncertainty ranges. Third, our best model is weak at naming the risk type. Fourth, the severe word list makes some mistakes, as we saw with Nestlé. With more time we would do four things: get two credit analysts to label 500 sentences, run the backtest on 30 or more reports including banks, teach the severe list to tell a merger at the NCLT from an insolvency case, and compare against large LLMs like GPT and Claude on the same test set.</aside>
+</section>

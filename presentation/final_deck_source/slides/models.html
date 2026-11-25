@@ -1,0 +1,21 @@
+<section id="models" data-transition="fade">
+<div class="head">
+<p class="eyebrow">M3 · Models compared</p>
+<h2>Five approaches, one exam: the fine-tuned DeBERTa model wins</h2>
+</div>
+<table class="rise" style="--i:0;font-size:27px">
+<tr><th style="width:44%">Approach (simple meaning)</th><th style="width:14%">Precision</th><th style="width:14%">Recall</th><th style="width:28%">F1 (95% range)</th></tr>
+<tr><td>Keyword search, like Ctrl+F</td><td>0.13</td><td>0.73</td><td>0.23 (0.15–0.30)</td></tr>
+<tr><td>TF-IDF: counts important words</td><td>0.52</td><td>0.70</td><td>0.60 (0.46–0.71)</td></tr>
+<tr><td>Qwen2.5-7B LLM, no training</td><td>0.45</td><td>0.73</td><td>0.56 (0.42–0.67)</td></tr>
+<tr><td>FinBERT, trained (runs in the app)</td><td>0.70</td><td>0.84</td><td>0.77 (0.65–0.86)</td></tr>
+<tr class="hl"><td>DeBERTa-v3-large, trained, 3 copies averaged</td><td>0.81</td><td>0.92</td><td>0.86 (0.76–0.93)</td></tr>
+</table>
+<div class="row rise" style="--i:1;gap:24px">
+<p class="small" style="flex:1"><b>Precision:</b> of the flags it raises, how many are real.</p>
+<p class="small" style="flex:1"><b>Recall:</b> of the real risks, how many it finds.</p>
+<p class="small" style="flex:1"><b>F1:</b> one score that balances both. 1.0 is perfect.</p>
+</div>
+<p class="footer">6 · Test set: 600 sentences, 37 risks, from Jet Airways, Yes Bank, TCS, Maruti and Sun Pharma</p>
+<aside>Here we compare five approaches on the same exam of 600 sentences. Quick meaning of the scores: precision means of everything it flagged, how much was really a risk. Recall means of all the real risks, how many it found. F1 combines the two into one number, where 1 is perfect. Keyword search finds many risks but almost nine out of ten flags are false alarms, so F1 is only 0.23. TF-IDF, a classic word-counting method, gets 0.60. A 7-billion-parameter open LLM, Qwen, used without any training, gets 0.56, so a general AI is not enough. Models trained on our data do much better. FinBERT, a finance-trained model, gets 0.77 and runs in our app on a laptop. Our best, DeBERTa-v3-large, gets 0.86 and finds 92 percent of real risks. The bracket shows the 95 percent range, because 37 risks is still a small exam.</aside>
+</section>

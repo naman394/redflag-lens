@@ -2,7 +2,7 @@
 
 Reads an Indian company's annual report and lists its red flags for **credit analysts at banks and NBFCs**: going-concern doubts, auditor qualifications, defaults, insolvency proceedings, regulator penalties and disputed dues. Every finding links to its page, with the sentence highlighted. NLP course project, Industry Track.
 
-## Results (test set: 5 companies never seen in training)
+## Results (first test set v1.0: 300 sentences from 5 companies never seen in training)
 
 | Model | Precision | Recall | F1 | Speed |
 |---|---|---|---|---|
@@ -26,6 +26,12 @@ FinBERT over 3 seeds: F1 0.71 ± 0.04, recall 0.85 ± 0.04. A full report takes 
 - On **Gensol FY2024**, held out from everything, the summary leads with the auditor's adverse remark on a subsidiary and a going-concern doubt.
 
 See docs/TECHNICAL_REPORT.md §8 for caveats.
+
+**Fresh test on two reports never used anywhere** (`src/eval/new_reports.py`, `reports/backtest/new_unseen/`):
+- SpiceJet FY2023 (distressed): **34 severe signs, 13.5 per 1,000 sentences**, including going-concern material uncertainty, a qualified opinion, "unable to pay Rs 750 million" and lessors' IBC petitions. About 6 of the 34 are false alarms.
+- Nestlé India FY2024 (healthy): **5 severe signs, 1.6 per 1,000**, all false alarms (NCLT merger scheme, standard audit wording). See TECHNICAL_REPORT §8.1.
+
+**Final deliverables:** [final report (PDF)](docs/RedFlagLens_Final_Report.pdf) · [technical report](docs/TECHNICAL_REPORT.md) · [viva prep](docs/VIVA_PREP.md) · final slide deck link in [presentation/DECK_LINK.txt](presentation/DECK_LINK.txt), slide source in `presentation/final_deck_source/`.
 
 Details, error analysis, robustness and limitations: [docs/TECHNICAL_REPORT.md](docs/TECHNICAL_REPORT.md). Every run is logged in [reports/experiments.csv](reports/experiments.csv).
 

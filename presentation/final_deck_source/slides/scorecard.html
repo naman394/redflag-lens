@@ -1,0 +1,17 @@
+<section id="scorecard" data-transition="fade">
+<div class="head">
+<p class="eyebrow">M4 · Scorecard</p>
+<h2>We set targets before building, and met most of them</h2>
+</div>
+<table class="rise" style="--i:0;font-size:26px">
+<tr><th style="width:40%">Target (set in M1)</th><th style="width:14%">Goal</th><th style="width:22%">Result</th><th style="width:24%">Status</th></tr>
+<tr><td>Find risk sentences (F1)</td><td>≥ 0.80</td><td>0.86 best model</td><td>Met</td></tr>
+<tr><td>Catch real risks (recall)</td><td>≥ 0.85</td><td>0.92 best model</td><td>Met</td></tr>
+<tr><td>Right risk type (category F1)</td><td>≥ 0.70</td><td>0.70 FinBERT</td><td>Met (app model)</td></tr>
+<tr><td>Time per report on a laptop</td><td>≤ 3 min</td><td>~2.5 min</td><td>Met (FinBERT)</td></tr>
+<tr><td>Separate failed from healthy</td><td>≥ 0.75 AUC</td><td>0.94</td><td>Met (8 reports)</td></tr>
+<tr><td>Summary claims backed by evidence</td><td>≥ 95%</td><td>not measured</td><td>Open</td></tr>
+</table>
+<p class="footer">9 · On a GPU, DeBERTa takes about 5 seconds per report. On a laptop CPU it takes about 16 minutes.</p>
+<aside>Back in milestone one we wrote down targets before building anything, so we could not move the goalposts later. Here is the scorecard. Finding risk sentences: goal 0.80, we got 0.86. Catching real risks: goal 0.85, we got 0.92. Naming the right risk type: goal 0.70, FinBERT gets exactly 0.70. Time per report on a laptop: goal three minutes, FinBERT takes about two and a half. Separating failed companies from healthy ones: goal 0.75, we got 0.94. One target is open: checking the AI summary, because our Gemini credit ran out. There is a trade-off. DeBERTa finds more risks but is weaker at naming the type, 0.49. FinBERT is better at types and fast on a laptop. So the laptop app uses FinBERT, and on a GPU server we use DeBERTa, which takes about five seconds per report.</aside>
+</section>

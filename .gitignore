@@ -15,3 +15,8 @@ logs/
 
 # new unseen test reports (public filings, 19 MB)
 data/raw/new_test/
+
+# LaTeX build files
+docs/ieee/*.aux
+docs/ieee/*.log
+docs/ieee/*.out

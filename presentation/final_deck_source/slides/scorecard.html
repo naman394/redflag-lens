@@ -12,6 +12,6 @@
 <tr><td>Separate failed from healthy</td><td>≥ 0.75 AUC</td><td>0.94</td><td>Met (8 reports)</td></tr>
 <tr><td>Summary claims backed by evidence</td><td>≥ 95%</td><td>not measured</td><td>Open</td></tr>
 </table>
-<p class="footer">9 · On a GPU, DeBERTa takes about 5 seconds per report. On a laptop CPU it takes about 16 minutes.</p>
+<p class="footer">8 ·On a GPU, DeBERTa takes about 5 seconds per report. On a laptop CPU it takes about 16 minutes.</p>
 <aside>Back in milestone one we wrote down targets before building anything, so we could not move the goalposts later. Here is the scorecard. Finding risk sentences: goal 0.80, we got 0.86. Catching real risks: goal 0.85, we got 0.92. Naming the right risk type: goal 0.70, FinBERT gets exactly 0.70. Time per report on a laptop: goal three minutes, FinBERT takes about two and a half. Separating failed companies from healthy ones: goal 0.75, we got 0.94. One target is open: checking the AI summary, because our Gemini credit ran out. There is a trade-off. DeBERTa finds more risks but is weaker at naming the type, 0.49. FinBERT is better at types and fast on a laptop. So the laptop app uses FinBERT, and on a GPU server we use DeBERTa, which takes about five seconds per report.</aside>
 </section>

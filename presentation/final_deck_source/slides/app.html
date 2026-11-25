@@ -5,7 +5,7 @@
 </div>
 <div class="row" style="gap:40px">
 <div class="step rise" style="--i:0"><p class="n">1</p><h3>Upload</h3><p class="small">Drop in the annual report PDF. Checks run first: is it a real PDF, locked, or scanned?</p></div>
-<div class="step rise" style="--i:1"><p class="n">2</p><h3>Wait ~2.5 min</h3><p class="small">FinBERT reads every sentence on a laptop. A GPU server with DeBERTa takes about 5 seconds.</p></div>
+<div class="step rise" style="--i:1"><p class="n">2</p><h3>Wait ~2.5 min</h3><p class="small">FinBERT reads every sentence on a laptop. The two-step model adds DeBERTa’s re-check in ~2–4 min; on a GPU about 5 seconds.</p></div>
 <div class="step rise" style="--i:2"><p class="n">3</p><h3>See the summary</h3><p class="small">Five numbers at the top, severe signs first, then a short written summary of the main risks.</p></div>
 <div class="step rise" style="--i:3"><p class="n">4</p><h3>Check the evidence</h3><p class="small">A table of findings with risk type, score and page. Filter to “Severe only” or open the review tier.</p></div>
 </div>
@@ -15,6 +15,6 @@
 <p class="pill">Docker file for deployment</p>
 <p class="pill">Thumbs up / down feedback</p>
 </div>
-<p class="footer">12 · Live demo: http://localhost:8501 · Model is picked with REDFLAG_MODEL = finbert, deberta or tfidf</p>
+<p class="footer">11 ·Live demo: http://localhost:8501 · Model is picked with REDFLAG_MODEL = finbert, cascade (two-step), deberta or tfidf</p>
 <aside>This is the product. The analyst opens the dashboard and uploads a PDF. Before anything, it checks the file: is it a real PDF, is it password-locked, is it a scanned image with no text. Then the model reads every sentence; on a laptop with FinBERT this takes about two and a half minutes, on a GPU server with DeBERTa about five seconds. At the top you see five numbers, with severe warning signs first, and a short summary. Below is the table of findings, each with its risk type, score and page number, so you can open the PDF and check. You can filter to severe only, or open the review tier to see lower-confidence flags. The analyst can give thumbs up or down, and that feedback becomes new training data. It is built with Streamlit for the screen, FastAPI for the backend, and a Docker file so it can be deployed. Let me show it live now.</aside>
 </section>

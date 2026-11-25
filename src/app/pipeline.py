@@ -99,13 +99,33 @@ class Classifier:
         return score, cat, spec
 
 
+class Cascade:
+    """Two-step CPU setup (src/eval/cascade.py): FinBERT scores every sentence and gives the category; only sentences
+    with FinBERT score >= GATE are re-scored by DeBERTa-v3-large + aug. Test v1.1: F1 0.83 vs 0.77 for FinBERT alone."""
+    GATE = 0.05  # = FinBERT's validation-tuned review threshold, not tuned on test
+
+    def __init__(self):
+        self.fb, self.db = Classifier("finbert"), Classifier("deberta")
+        assert self.fb.name == "finbert" and self.db.name == "deberta", "cascade needs models/finbert and models/debv3l_aug"
+        self.name, self.threshold = "cascade", self.fb.threshold
+
+    def predict(self, inputs: list[str]):
+        score, cat, spec = self.fb.predict(inputs)
+        idx = np.flatnonzero(score >= self.GATE)
+        if len(idx):
+            score = score.copy()
+            score[idx] = self.db.predict([inputs[i] for i in idx])[0]
+        return score, cat, spec
+
+
 _CLF = None
 
 
-def classifier() -> Classifier:
+def classifier():
     global _CLF
     if _CLF is None:
-        _CLF = Classifier(os.environ.get("REDFLAG_MODEL", "finbert"))
+        m = os.environ.get("REDFLAG_MODEL", "finbert")
+        _CLF = Cascade() if m == "cascade" else Classifier(m)
     return _CLF
 
 

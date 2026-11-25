@@ -1,0 +1,2098 @@
+{
+ "company": "NTPC_FY2019",
+ "fy": "",
+ "pages": 474,
+ "sentences_analysed": 3476,
+ "model": "cascade",
+ "threshold": 0.05,
+ "high_conf": 0.5,
+ "n_findings": 107,
+ "n_review": 14,
+ "n_specific": 102,
+ "n_severe": 2,
+ "n_demoted": 1,
+ "by_category": {
+  "Financial": 60,
+  "Regulatory": 17,
+  "Legal": 29,
+  "Business": 1
+ },
+ "summary": [
+  {
+   "claim": "2 severe warning sign(s) (going concern, default, audit qualification, insolvency, fraud or similar). Most serious: p.76: \"Pursuant to winding up proceedings, the Company had lost the joint control over the entity and accordingly, has classified the investment in\"; p.128: \"@BF-NTPC Energy Systems Limited, after getting approval from Ministry of Power, is under the Process of Winding Up and Liquidator was appoin\"",
+   "evidence": [
+    1167,
+    2074
+   ],
+   "verified": true
+  },
+  {
+   "claim": "60 financial red flag(s); most notable on p.76: \"Pursuant to winding up proceedings, the Company had lost the joint control over the entity and accordingly, has classified the investment in BF NTPC as 'Investment in unquoted equi\"",
+   "evidence": [
+    1167
+   ],
+   "verified": true
+  },
+  {
+   "claim": "29 legal red flag(s); most notable on p.286: \"There are a number of litigations pending before various forums against the Company and the management's judgement is required for estimating the amount to be disclosed as continge\"",
+   "evidence": [
+    2871
+   ],
+   "verified": true
+  },
+  {
+   "claim": "17 regulatory red flag(s); most notable on p.84: \"Thereafter, your Company approached the CERC with the difficulties being faced in implementation of the order through Petition No. 244/ MP/2016 with the CERC seeking inter-alia a m\"",
+   "evidence": [
+    1345
+   ],
+   "verified": true
+  },
+  {
+   "claim": "1 business red flag(s); most notable on p.86: \"Component-wise, there has been increase in the fuel cost, employee benefits expenses and in the other expenses.\"",
+   "evidence": [
+    1408
+   ],
+   "verified": true
+  }
+ ],
+ "summary_source": "template",
+ "findings": [
+  {
+   "id": 1167,
+   "page": 76,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Pursuant to winding up proceedings, the Company had lost the joint control over the entity and accordingly, has classified the investment in BF NTPC as 'Investment in unquoted equity instruments'.",
+   "score": 0.992,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": true,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 2074,
+   "page": 128,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "@BF-NTPC Energy Systems Limited, after getting approval from Ministry of Power, is under the Process of Winding Up and Liquidator was appointed for voluntary Liquidation of JV Company.",
+   "score": 0.988,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": true,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1217,
+   "page": 78,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "This decrease is mainly due to utilization of balance of Medium Term Notes (MTNs), amounting ₹ 1,743.89 crore as at 31 March 2018, for the stated purposes during the current year.",
+   "score": 0.994,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 1,743.89 crore"
+   ],
+   "dates": [
+    "31 March 2018"
+   ]
+  },
+  {
+   "id": 1425,
+   "page": 87,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "The expenditure towards gas has increased due to increase in the expenditure towards gas attributable to the increase in average price of gas during the financial year 2018-19 as compared to previous year.",
+   "score": 0.994,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "2018-19"
+   ]
+  },
+  {
+   "id": 1173,
+   "page": 77,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Investments mainly comprise of investment in equity instruments of PTC India Ltd. The carrying value of equity instruments of PTC India Ltd. has decreased from ₹ 104.88 crore as at 31 March 2018 to ₹ 88.14 crore as at 31 March 2019 due to decrease in market value of shares of PTC India Ltd.",
+   "score": 0.993,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 104.88 crore",
+    "₹ 88.14 crore"
+   ],
+   "dates": [
+    "31 March 2018",
+    "31 March 2019"
+   ]
+  },
+  {
+   "id": 1224,
+   "page": 79,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "The Company has recognised a deferred asset for above deferred tax liabilities (Net) in its financial statements (referred to as 'Deferred asset for deferred tax liability').",
+   "score": 0.992,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1372,
+   "page": 85,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Consequently, provision for tariffadjustment amounting to ₹ 276.69 crore, expenditure of ₹ 2,708.88 crore and sales of ₹ 2,926.47 crore for the period from 15 November 2014 to 31 March 2018 have been reversed and related adjustment have been carried out in the property, plant and equipment (Note-2) during the year.",
+   "score": 0.992,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 276.69 crore",
+    "₹ 2,708.88 crore",
+    "₹ 2,926.47 crore"
+   ],
+   "dates": [
+    "15 November 2014",
+    "31 March 2018"
+   ]
+  },
+  {
+   "id": 1174,
+   "page": 77,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Decrease in loans is mainly due to decrease in outstanding loan to subsidiary Company, Kanti Bijlee Utpadan Nigam Ltd. by ₹ 91.00 crore.",
+   "score": 0.991,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 91.00 crore"
+   ],
+   "dates": []
+  },
+  {
+   "id": 1410,
+   "page": 86,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "During the financial year 2018-19, the Company had written back provisions for tariffadjustments made in earlier years amounting to ₹ 276.69 crore in comparison to ₹ 1,158.97 crore in the financial year 2017-18.",
+   "score": 0.991,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 276.69 crore",
+    "₹ 1,158.97 crore"
+   ],
+   "dates": [
+    "2018-19",
+    "2017-18"
+   ]
+  },
+  {
+   "id": 1345,
+   "page": 84,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Thereafter, your Company approached the CERC with the difficulties being faced in implementation of the order through Petition No. 244/ MP/2016 with the CERC seeking inter-alia a margin in the GCV measured at wagon top.",
+   "score": 0.99,
+   "category": "Regulatory",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1035,
+   "page": 72,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Environmental Concerns: The environmental concerns, particularly relating to coal based thermal stations, have emerged as a major challenge to the sector.",
+   "score": 0.989,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1043,
+   "page": 72,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "On account of this, the PLF of gas-based power plants in the country remained low and the power sector has been struggling to recover costs of capital investment in gas-based capacity.",
+   "score": 0.989,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 2963,
+   "page": 290,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "INDEPENDENT AUDITORS' REPORT ON SFS of ₹ 7,640.37 crore of dues have not been deposited on account of matters pending before appropriate authorities as detailed below:",
+   "score": 0.989,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 7,640.37 crore"
+   ],
+   "dates": []
+  },
+  {
+   "id": 1308,
+   "page": 82,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Other current financial liabilities have increased mainly due to increase in payables for capital expenditure which has increased from ₹ 11,813.97 crore as on 31 March 2018 to ₹ 13,609.93 crore as on 31 March 2019.",
+   "score": 0.988,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 11,813.97 crore",
+    "₹ 13,609.93 crore"
+   ],
+   "dates": [
+    "31 March 2018",
+    "31 March 2019"
+   ]
+  },
+  {
+   "id": 2862,
+   "page": 285,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "The company has recognised deferred tax asset relating to MAT credit entitlement.",
+   "score": 0.988,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 2871,
+   "page": 286,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "There are a number of litigations pending before various forums against the Company and the management's judgement is required for estimating the amount to be disclosed as contingent liability.",
+   "score": 0.988,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 2972,
+   "page": 292,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "*** Includes ₹ 5.01 crore towards the demand for VAT and CST raised by Sales tax authority, which has been stayed by Commissioner/Additional Commissioner of Sales Tax.",
+   "score": 0.988,
+   "category": "Regulatory",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 5.01 crore"
+   ],
+   "dates": []
+  },
+  {
+   "id": 3197,
+   "page": 378,
+   "section": "NOTES",
+   "scope": "consolidated",
+   "text": "Hon'ble Supreme Court of India on 7 May 2014, ordered that no further construction shall be undertaken in the projects under consideration until further orders, which included the said hydro project of the Company.",
+   "score": 0.987,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "7 May 2014"
+   ]
+  },
+  {
+   "id": 792,
+   "page": 61,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "Besides 18 joint venture companies, NTPC-SCCL Global Ventures Private Limited has been dissolved and your Company has decided to exit from International Coal Ventures Private Limited, in view of lack of suitable commercially viable opportunities for thermal coal.",
+   "score": 0.986,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1364,
+   "page": 85,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "This includes reversal of sales amounting to ₹ 2,926.47 crore in respect of one of the stations, considering the directions issued by the CERC.",
+   "score": 0.986,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 2,926.47 crore"
+   ],
+   "dates": []
+  },
+  {
+   "id": 2833,
+   "page": 284,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "We draw attention to the following matters in the notes to the Standalone Financial Statements:",
+   "score": 0.986,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 2970,
+   "page": 292,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "* Includes disputed amount of ₹ 5,427.00 crore in respect of certain matters, where the first appellate authority has decided in favour of the company, although the Assessing Officer has disputed the same with appropriate Appellate Authority.",
+   "score": 0.986,
+   "category": "Regulatory",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 5,427.00 crore"
+   ],
+   "dates": []
+  },
+  {
+   "id": 802,
+   "page": 61,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "(i) Note No. 32 (a) regarding billing and recognition of sales on provisional basis pending disposal of the Company's petition before CERC on the measurement of GCV of coal on 'As received' basis measured on wagon top at the unloading point, on the adjustment of loss of GCV for the period 2014-19 and other related matters as mentioned in the said note.",
+   "score": 0.985,
+   "category": "Regulatory",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "2014-19"
+   ]
+  },
+  {
+   "id": 1177,
+   "page": 77,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "It includes ₹ 413.40 crore (31 March 2018: ₹ 390.59 crore) in respect of arbitration awards challenged by the Company before Hon'ble High Court of Delhi.",
+   "score": 0.985,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 413.40 crore",
+    "₹ 390.59 crore"
+   ],
+   "dates": [
+    "31 March 2018"
+   ]
+  },
+  {
+   "id": 1204,
+   "page": 78,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Claims recoverable include claims against railways of ₹ 1,912.55 crore (31 March 2018: ₹ 1,227.75 crore) which are mainly towards diverted out coal wagons.",
+   "score": 0.985,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 1,912.55 crore",
+    "₹ 1,227.75 crore"
+   ],
+   "dates": [
+    "31 March 2018"
+   ]
+  },
+  {
+   "id": 1369,
+   "page": 85,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Pending disposal of the appeal and considering the said order of the CERC, sales for the year 2017-18 was recognized as per CERC order and provision for tariffadjustment was made for the sales recognised till March 2017.",
+   "score": 0.985,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "2017-18",
+    "March 2017"
+   ]
+  },
+  {
+   "id": 2971,
+   "page": 292,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "** Includes ₹ 2.08 crore and ₹ 0.29 crore towards the demand for VAT raised by Sales tax officer, which has been stayed by the Hon'ble High Court and Commissioner of Sales tax respectively.",
+   "score": 0.985,
+   "category": "Regulatory",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 2.08 crore",
+    "₹ 0.29 crore"
+   ],
+   "dates": []
+  },
+  {
+   "id": 3247,
+   "page": 452,
+   "section": "AUDITOR_REPORT",
+   "scope": "consolidated",
+   "text": "(a) Note No. 32 (a) regarding billing and recognition of sales on provisional basis pending disposal of the Holding Company's petition before CERC on the measurement of GCV of coal on 'as received' basis measured on wagon top at the unloading point, on the adjustment of loss of GCV for the period 2014-19 and other related matters as mentioned in the said note.",
+   "score": 0.985,
+   "category": "Regulatory",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "2014-19"
+   ]
+  },
+  {
+   "id": 426,
+   "page": 48,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "However, in view of various roadblocks in development of the Kudanali Luburi Coal Block, your Company has decided to surrender allocated share of coal mine in the said coal block allotted to the Company.",
+   "score": 0.984,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1342,
+   "page": 84,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Your Company has filed a writ petition before the Hon'ble Delhi High Court contesting certain provisions of the Regulations, 2014.",
+   "score": 0.984,
+   "category": "Regulatory",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1399,
+   "page": 86,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "The income from investment in bank term deposits, mutual funds etc. has registered a decrease of 81% from last financial year attributed to decrease in earnings on account of decrease in average annual investment from ₹ 4,713.03 crore in financial year 2017-18 to ₹ 1,008.12 crore in financial year 2018-19.",
+   "score": 0.984,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 4,713.03 crore",
+    "₹ 1,008.12 crore"
+   ],
+   "dates": [
+    "2017-18",
+    "2018-19"
+   ]
+  },
+  {
+   "id": 1445,
+   "page": 87,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Provisions mainly include an amount of ₹ 394.07 crore (31 March 2018: ₹ Nil) for arbitration case pertaining to the dispute with the operator and provided against the award pronounced by the arbitral tribunal for which the Company has filed an appeal before Hon'ble High Court of Delhi.",
+   "score": 0.984,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 394.07 crore"
+   ],
+   "dates": [
+    "31 March 2018"
+   ]
+  },
+  {
+   "id": 2076,
+   "page": 128,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "Note: Hon'ble High Court of Delhi, based on satisfaction accorded by the official Liquidator, pronounced its order dated July 27, 2018 under (CO.PET No. 64/2017) that NTPC-SCCL, is hereby wound up and shall deemed to be dissolved with effect from the date of filing the petition i.e November, 2017.",
+   "score": 0.984,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "November, 2017"
+   ]
+  },
+  {
+   "id": 2834,
+   "page": 284,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "(a) Note No. 32(a) regarding billing and recognition of sales on provisional basis pending disposal of the Company's petition before CERC on the measurement of GCV of coal on 'as received' basis measured on wagon top at the unloading point, on the adjustment of loss of GCV for the period 2014-19 and other related matters as mentioned in the said note.",
+   "score": 0.984,
+   "category": "Regulatory",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "2014-19"
+   ]
+  },
+  {
+   "id": 2973,
+   "page": 292,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "**** Includes ₹ 1.02 crore towards the demand for CST raised by Sales tax officer, which has been stayed by the Hon'ble High Court.",
+   "score": 0.984,
+   "category": "Regulatory",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 1.02 crore"
+   ],
+   "dates": []
+  },
+  {
+   "id": 2974,
+   "page": 292,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "***** Includes ₹ 0.30 crore towards the demand for service tax raised by Commissioner, Central Excise Customs and Service Tax which has been stayed by CESTAT.",
+   "score": 0.984,
+   "category": "Regulatory",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 0.30 crore"
+   ],
+   "dates": []
+  },
+  {
+   "id": 3196,
+   "page": 378,
+   "section": "NOTES",
+   "scope": "consolidated",
+   "text": "A case was filed in Hon'ble Supreme Court of India after the natural disaster in Uttrakhand in June 2013 to review whether the various existing and ongoing hydro projects have contributed to environmental degradation.",
+   "score": 0.984,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "June 2013"
+   ]
+  },
+  {
+   "id": 3249,
+   "page": 452,
+   "section": "AUDITOR_REPORT",
+   "scope": "consolidated",
+   "text": "(b) with respect to appeal filed by the Holding company with the Hon'ble High Court of Delhi in the matter of Arbitral award pronounced against the Holding company and the related provision made/disclosure of contingent liability as mentioned in the said note.",
+   "score": 0.984,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 35,
+   "page": 36,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "Generation from coal based units could have been still higher but due to less generation schedule there was opportunity loss of 36.02 BUs.",
+   "score": 0.983,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 804,
+   "page": 62,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "(iii) Note No. 57(iii)(b) with respect to appeal filed by the Company with the Hon'ble High Court of Delhi in the matter of Arbitral award pronounced against the Company and the related provision made/disclosure of contingent liability as mentioned in the said note.",
+   "score": 0.983,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1176,
+   "page": 77,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Claims recoverable includes ₹ 719.71 crore (31 March 2018: ₹ 680.11 crore) towards the cost incurred upto 31 March 2019 in respect of one of the hydro power projects, the construction of which has been discontinued on the advice of the Ministry of Power (MoP), GoI.",
+   "score": 0.983,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 719.71 crore",
+    "₹ 680.11 crore"
+   ],
+   "dates": [
+    "31 March 2018",
+    "31 March 2019"
+   ]
+  },
+  {
+   "id": 1178,
+   "page": 77,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "In the event the Hon'ble High Court grants relief to the Company, the amount would be adjusted against Current liabilities - Provisions - Provision for others (Note-30).",
+   "score": 0.983,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1305,
+   "page": 82,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "The decrease in provision in the current year is mainly on account of provision towards revision of pay-scales of employees as of 31 March 2018 amounting ₹ 1,203.28 crore which has been used during the year and decrease in provision for gratuity amounting to ₹ 659.73 crore which has also been paid during the year.",
+   "score": 0.983,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 1,203.28 crore",
+    "₹ 659.73 crore"
+   ],
+   "dates": [
+    "31 March 2018"
+   ]
+  },
+  {
+   "id": 2486,
+   "page": 157,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "However, as part of the tariffdetermination process under the overall regulatory system, different cases have been filed by NTPC against CERC/ Customers or filed at the Appellate Tribunal/ Courts by different Beneficiaries against NTPC/ CERC.",
+   "score": 0.983,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 2836,
+   "page": 284,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "(b) with respect to appeal filed by the company with the Hon'ble High Court of Delhi in the matter of Arbitral award pronounced against the company and the related provision made/disclosure of contingent liability as mentioned in the said note.",
+   "score": 0.983,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 3198,
+   "page": 378,
+   "section": "NOTES",
+   "scope": "consolidated",
+   "text": "In the proceedings, Hon'ble Supreme Court is examining to allow few projects which have all clearances which includes the project of the Company where the work has been stopped.",
+   "score": 0.983,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1290,
+   "page": 82,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Less: Reversal of provision for tariffadjustment on account of Barh Stage-II consequent to the order of the Hon'ble Supreme Court of India against the Company",
+   "score": 0.982,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 2835,
+   "page": 284,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "(b) Note No. 42 in respect of a Company's project consisting of three units of 800MW each, where the order of NGT has been stayed by the Hon'ble Supreme Court of India; the matter is sub-judiced and the units have since been declared commercial.",
+   "score": 0.981,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 3248,
+   "page": 452,
+   "section": "AUDITOR_REPORT",
+   "scope": "consolidated",
+   "text": "(b) Note No. 42 in respect of a Holding Company's project consisting of three units of 800MW each, where the order of NGT has been stayed by the Hon'ble Supreme Court of India, the matter is sub-judiced and the units have since been declared commercial.",
+   "score": 0.981,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 284,
+   "page": 45,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "In view of lack of suitable commercially viable opportunities for thermal coal, your Company has decided to exit from ICVL.",
+   "score": 0.978,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 803,
+   "page": 61,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "(ii) Note No. 42 in respect of a Company's project consisting of three units of 800 MW each where the order of NGT has been stayed by the Hon'ble Supreme Court of India; the matter is subjudiced and the units have since been declared commercial.",
+   "score": 0.978,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1297,
+   "page": 82,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Provision for others mainly comprise ₹ 85.14 crore (31 March 2018: ₹ 73.15 crore) towards cost of unfinished minimum work programme demanded by the Ministry of Petroleum and Natural Gas (MoP&NG) including interest thereon in relation to Block AA-ONN-2003/2 (Refer Note-60), ₹ 1,908.43 crore (31 March 2018: ₹ 1,279.31 crore) towards provision for cases under litigation and ₹ 3.36 crore (31 March 2018: ₹ 4.62 crore) towards provision for shortage in property, plant and equipment on physical verification pending investigation.",
+   "score": 0.978,
+   "category": "Regulatory",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 85.14 crore",
+    "₹ 73.15 crore",
+    "₹ 1,908.43 crore",
+    "₹ 1,279.31 crore",
+    "₹ 3.36 crore",
+    "₹ 4.62 crore"
+   ],
+   "dates": [
+    "31 March 2018",
+    "31 March 2018",
+    "31 March 2018"
+   ]
+  },
+  {
+   "id": 1365,
+   "page": 85,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "The commercial operation date (COD) of one of the stations of the Company declared by the Company as 14 November 2014 was challenged by one of its beneficiaries.",
+   "score": 0.978,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "14 November 2014"
+   ]
+  },
+  {
+   "id": 1408,
+   "page": 86,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Component-wise, there has been increase in the fuel cost, employee benefits expenses and in the other expenses.",
+   "score": 0.978,
+   "category": "Business",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1348,
+   "page": 84,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "The writ petition filed in Hon'ble High Court, Delhi was withdrawn without prejudice to the rights and contentions of the Company in the petition pending before the CERC for adjustments of loss of GCV relating the period 201419.",
+   "score": 0.977,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 215,
+   "page": 42,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "On the hearing held on 26.04.2016 also, Additional Solicitor General of India has also informed the Court that Lata – Tapovan Project must be implemented.",
+   "score": 0.976,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "26.04.2016"
+   ]
+  },
+  {
+   "id": 1368,
+   "page": 85,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "The Company filed an appeal against this order in APTEL on 11 October 2017.",
+   "score": 0.976,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "11 October 2017"
+   ]
+  },
+  {
+   "id": 218,
+   "page": 43,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "pending in Hon'ble Supreme Court for want of affidavit from Ministry of Water Resources (MoWR).",
+   "score": 0.975,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 801,
+   "page": 61,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "However, they have drawn attention under 'Emphasis of Matter' to the following notes:",
+   "score": 0.975,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1370,
+   "page": 85,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "On 25 January 2019, APTEL disposed offthe Company's appeal by upholding the said CERC order.",
+   "score": 0.975,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "25 January 2019"
+   ]
+  },
+  {
+   "id": 1803,
+   "page": 106,
+   "section": "CORP_GOV",
+   "scope": "standalone",
+   "text": "(c) The Company had received notices from the NSE and BSE for non-compliance with the provisions of Regulation 17 (1) of the SEBI LODR in respect of Q 2 and Q 3 of 2018-19.",
+   "score": 0.975,
+   "category": "Regulatory",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "2018-19"
+   ]
+  },
+  {
+   "id": 3192,
+   "page": 378,
+   "section": "NOTES",
+   "scope": "consolidated",
+   "text": "The Company filed an appeal challenging the NGT order before the Hon'ble Supreme Court of India which stayed the order of the NGT and the matter is sub-judice.",
+   "score": 0.974,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 3451,
+   "page": 470,
+   "section": "AUDITOR_REPORT",
+   "scope": "consolidated",
+   "text": "Subsequent to printing of the aforesaid Notice, there has been material event as explained in this Addendum, due to which the Agenda Item No. 5 as contained in the said Notice of AGM needs to be withdrawn.",
+   "score": 0.974,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 405,
+   "page": 48,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "MDO contract was suspended and the matter is subjudice with Hon'ble Supreme Court.",
+   "score": 0.971,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 85,
+   "page": 38,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "@Work of Lata Tapovan HEPP stopped as per orders of the Hon'ble Supreme Court dated 07.05.2014.",
+   "score": 0.97,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "07.05.2014"
+   ]
+  },
+  {
+   "id": 2953,
+   "page": 290,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "The Company has obtained deposits from the dependents of employees who die or suffer permanent total disability for which the Company has applied to the Ministry of Corporate Affairs, Government of India for continuation of the exemption earlier obtained in respect of applicability of Section 58A of the Companies Act, 1956, which is still awaited (refer Note No. 28 (d) of the Standalone Financial Statements).",
+   "score": 0.969,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1371,
+   "page": 85,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Further, the Company's appeal against the said CERC order has also been dismissed by the Hon'ble Supreme Court of India on 5 April 2019.",
+   "score": 0.968,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "5 April 2019"
+   ]
+  },
+  {
+   "id": 1346,
+   "page": 84,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "The petition is pending with CERC.",
+   "score": 0.967,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 344,
+   "page": 47,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "* Pending for completion of legal formalities/ restraint orders/ nonreceipt of claims.",
+   "score": 0.965,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1484,
+   "page": 89,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "The petition filed by the Company before CERC seeking to reimburse the expenditure on transportation of ash, has been favourably considered by the CERC vide order dated 5 November 2018 and it was allowed to reimburse the actual additional expenditure incurred towards transportation of ash in terms of MOEF notification under change in law, as additional O&M expenses, w.e.f. 25 January 2016 subject to prudence check.",
+   "score": 0.964,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "5 November 2018",
+    "25 January 2016"
+   ]
+  },
+  {
+   "id": 2960,
+   "page": 290,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "(b) According to information and explanations given to us, the gross disputed statutory dues of income tax or sales tax or service tax or duty of customs or duty of excise or value added tax amounts to ₹ 10,696.19 crore in aggregate as on 31 March 2019, out of which ₹ 3,055.82 crore has been deposited under protest/adjusted by tax authorities and the balance",
+   "score": 0.964,
+   "category": "Regulatory",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 10,696.19 crore",
+    "₹ 3,055.82 crore"
+   ],
+   "dates": [
+    "31 March 2019"
+   ]
+  },
+  {
+   "id": 2967,
+   "page": 291,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "2003-04 Appeal not yet filed by IT department with High Court (Time limit not lapsed)",
+   "score": 0.963,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "2003-04"
+   ]
+  },
+  {
+   "id": 1229,
+   "page": 79,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "The petition filed by the Company before CERC seeking to reimburse the expenditure on transportation of ash, has been favorably considered by the CERC vide order dated 5 November 2018 and was allowed to be reimbursed the actual additional expenditure incurred towards transportation of ash in terms of MOEF notification under change in law, as additional O&M expenses, w.e.f. 25 January 2016 subject to prudence check.",
+   "score": 0.961,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "5 November 2018",
+    "25 January 2016"
+   ]
+  },
+  {
+   "id": 2993,
+   "page": 294,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "No. Directions u/s 143(5) of the Companies Act, 2013 Auditor's reply on action taken on the directions Impact on",
+   "score": 0.955,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 395,
+   "page": 48,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "Further, Ministry of Coal through letter dated 3.4.2019 has sought Bihar State Power Generation Company Limited's prior consent for assigning Badam coal block in favour of your Company.",
+   "score": 0.954,
+   "category": "Regulatory",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "3.4.2019"
+   ]
+  },
+  {
+   "id": 419,
+   "page": 48,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "There are issues in availability of land for external OB dump and therefore with a view to optimize exploitation, your Company has proposed to the Nominated Authority, Ministry of Coal, for merger of these coal blocks.",
+   "score": 0.951,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 805,
+   "page": 62,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "The issues have been adequately explained in the respective Notes referred to by the Auditors.",
+   "score": 0.946,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 420,
+   "page": 48,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "The matter is under consideration at MoC.",
+   "score": 0.945,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1347,
+   "page": 84,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Pending disposal of the petition by the CERC for the tariffperiod 2014-19, measurement of GCV of coal is being done from wagon top samples in respect of most of the stations barring a few on the grounds of safety issues, for the quantity supplied through conveyors/road and other difficulties.",
+   "score": 0.945,
+   "category": "Regulatory",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "2014-19"
+   ]
+  },
+  {
+   "id": 2864,
+   "page": 285,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "We have obtained an understanding for recognition of deferred tax asset relating to MAT credit entitlement and corresponding liability of the same in Regulatory Deferral Account including the management's judgement.",
+   "score": 0.943,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1189,
+   "page": 77,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "The increase is mainly due to increase in advance tax net of provision for tax from ₹ 3,216.14 crore to ₹ 4,541.90 crore.",
+   "score": 0.94,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 3,216.14 crore",
+    "₹ 4,541.90 crore"
+   ],
+   "dates": []
+  },
+  {
+   "id": 2966,
+   "page": 291,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "Amount deposited under protest/ adjusted by Tax Authorities",
+   "score": 0.939,
+   "category": "Regulatory",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 2075,
+   "page": 128,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "# NTPC has decided to exit from Transformers and Electricals Kerala Limited(TELK) and Ministry of Power, Government of India also accorded its approval for the same but Government of Kerala through Additional Chief Secretary to Government vide letter dated May 2,2017,requested NTPC to review and cancel decision to quit TELK.",
+   "score": 0.938,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1228,
+   "page": 79,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Accordingly, an amount of (-) ₹ 5,160.22 crore (31 March 2018: ₹ 2,707.85 crore) for the year ended 31 March 2019 has been accounted for as 'Regulatory deferral account debit balance'.",
+   "score": 0.932,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 5,160.22 crore",
+    "₹ 2,707.85 crore"
+   ],
+   "dates": [
+    "31 March 2018",
+    "31 March 2019"
+   ]
+  },
+  {
+   "id": 388,
+   "page": 48,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "With the extension, the long pending LT RLNG ToP (Take-or-Pay) dispute with GAIL was settled and contingent liabilities of Rs 5821.61 crore in Company's books of accounts got cleared.",
+   "score": 0.918,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "Rs 5821.61 crore"
+   ],
+   "dates": []
+  },
+  {
+   "id": 280,
+   "page": 44,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "Voluntary liquidation of the Company is in progress.",
+   "score": 0.914,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1483,
+   "page": 89,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Accordingly, an amount of (-) ₹ 5,160.22 crore for the year ended 31 March 2019 (31 March 2018: ₹ 2,707.85 crore) has been accounted for as 'Regulatory deferral account debit balance'.",
+   "score": 0.906,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 5,160.22 crore",
+    "₹ 2,707.85 crore"
+   ],
+   "dates": [
+    "31 March 2019",
+    "31 March 2018"
+   ]
+  },
+  {
+   "id": 904,
+   "page": 67,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Quarterly growth rate analysis depicts that during Q1, 2018-19 (April-June) GDP growth rate peaked at 8.0%, but it has moved in a downward trend with growth rate of 7.0%, 6.6% and 5.8% during Q2, 2018-19 (July-Sep), Q3, 2018-19 (Oct-Dec) and Q4, 2018-19 (Jan-Mar) respectively.",
+   "score": 0.903,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "2018-19",
+    "2018-19",
+    "2018-19",
+    "2018-19"
+   ]
+  },
+  {
+   "id": 3215,
+   "page": 379,
+   "section": "NOTES",
+   "scope": "consolidated",
+   "text": "In accordance with Ind AS 8 'Accounting Policies, Changes in Accounting Estimates and Errors' and Ind AS 1 ' Presentation of Financial Statements', the Group has retrospectively restated its Balance Sheet as at 31 March 2018 and 1 April 2017 (beginning of the preceding period) and Statement of Profit and Loss and Statement of Cash Flows for the year ended 31 March 2018 for the reasons as stated in the notes below.",
+   "score": 0.895,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "31 March 2018",
+    "1 April 2017",
+    "31 March 2018"
+   ]
+  },
+  {
+   "id": 212,
+   "page": 42,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "All Construction activities at LTHPP have been stopped since 08.05.2014 in line with Hon'ble Supreme Court order dated 07.05.2014 for 24 Hydro Projects in the State of Uttarakhand including Lata-Tapovan.",
+   "score": 0.891,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "08.05.2014",
+    "07.05.2014"
+   ]
+  },
+  {
+   "id": 2289,
+   "page": 149,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "These complaints are received related to Equity Shares, Bonus Debentures, Private Placement of Bonds, and Public Issue of Bonds.",
+   "score": 0.888,
+   "category": "Regulatory",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 3456,
+   "page": 470,
+   "section": "AUDITOR_REPORT",
+   "scope": "consolidated",
+   "text": "Subsequent to printing of the aforesaid Notice, Ministry of Power vide its letter No. 2/4/2019-Adm.II dated 12th July 2019 had informed that Shri Anurag Agarwal, Additional Secretary & Financial Adviser, Ministry of Power has been relieved of his duties in Ministry of Power on his premature repatriation.",
+   "score": 0.886,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "2/4/2019",
+    "12th July 2019"
+   ]
+  },
+  {
+   "id": 807,
+   "page": 62,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "The Comptroller & Auditor General of India, through letter dated 01.07.2019, has given 'NIL' Comments on the Standalone Financial Statements of your Company for the year ended 31 March 2019 after conducting supplementary audit under Section 143 (6) (a) of the Companies Act, 2013.",
+   "score": 0.882,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "01.07.2019",
+    "31 March 2019"
+   ]
+  },
+  {
+   "id": 1218,
+   "page": 78,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "This increase is mainly due to increase in loan to subsidiary companies from ₹ 41.79 crore as at 31 March 2018 to ₹ 67.50 crore as at 31 March 2019.",
+   "score": 0.865,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 41.79 crore",
+    "₹ 67.50 crore"
+   ],
+   "dates": [
+    "31 March 2018",
+    "31 March 2019"
+   ]
+  },
+  {
+   "id": 2965,
+   "page": 291,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "Forum where the dispute is pending",
+   "score": 0.843,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 3202,
+   "page": 378,
+   "section": "NOTES",
+   "scope": "consolidated",
+   "text": "Further, Property, plant and equipment of ₹ 47.16 crore has been derecognised and charged to the statement of profit and loss (Refer Note 37) and an amount of ₹ 98.90 crore transferred to 'Assets held for disposal' at their estimated net realisable value (Refer Note 17).",
+   "score": 0.841,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 47.16 crore",
+    "₹ 98.90 crore"
+   ],
+   "dates": []
+  },
+  {
+   "id": 1310,
+   "page": 82,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "The main reasons for decrease of other current liabilities is due to decrease in",
+   "score": 0.815,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 2937,
+   "page": 289,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "I. The Company has disclosed the impact of pending litigations on its financial position in its Standalone Financial Statements.",
+   "score": 0.791,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1143,
+   "page": 75,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "In accordance with Ind AS 8 'Accounting Policies, Changes in Accounting Estimates and Errors' and Ind AS 1 'Presentation of Financial Statements', the Company has retrospectively restated its Balance Sheet as at 31 March 2018 and 1 April 2017 (beginning of the preceding period) and Statement of Profit and Loss for the year ended 31 March 2018 for reasons as stated below:",
+   "score": 0.767,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "31 March 2018",
+    "1 April 2017",
+    "31 March 2018"
+   ]
+  },
+  {
+   "id": 2442,
+   "page": 156,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "Change of Law in certain cases, has necessitated up-gradation of pollution control equipments which are being addressed through R&M Schemes for which actions plans have been submitted to the Regulators.",
+   "score": 0.764,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 808,
+   "page": 62,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "The Comptroller & Auditor General of India, through letter dated 01.07.2019, has also given 'NIL' Comments on the Consolidated Financial Statements of your Company for the year ended 31 March 2019 after conducting supplementary audit under Section 143 (6) (a) read with Section 129 (4) of the Companies Act, 2013.",
+   "score": 0.65,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "01.07.2019",
+    "31 March 2019"
+   ]
+  },
+  {
+   "id": 1937,
+   "page": 118,
+   "section": "CORP_GOV",
+   "scope": "standalone",
+   "text": "(a) As stated in Point No. 2.1 of the Corporate Governance Report, the Company has not complied with the Listing Regulations, with regard to the appointment of minimum number of Independent Directors in the composition of the Board of Directors as per details given below, for the period 1/4/2018 to 29/7/2018, where company has not appointed sufficient number of Independent Directors:",
+   "score": 0.581,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "1/4/2018",
+    "29/7/2018"
+   ]
+  },
+  {
+   "id": 2073,
+   "page": 128,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "% NTPC has decided to exit from International Coal Ventures Pvt. Limited and NTPC BHEL Power Projects Private Limited (NBPPL), approval from Government of India is awaited.",
+   "score": 0.431,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "review",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1216,
+   "page": 78,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Cash and cash equivalents & bank balances other than cash and cash equivalents have decreased from ₹ 3,978.38 crore as at 31 March 2018 to ₹ 2,144.34 crore as at 31 March 2019.",
+   "score": 0.386,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "review",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 3,978.38 crore",
+    "₹ 2,144.34 crore"
+   ],
+   "dates": [
+    "31 March 2018",
+    "31 March 2019"
+   ]
+  },
+  {
+   "id": 3000,
+   "page": 294,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "2 Whether there is any restructuring of an existing loan or cases of waiver/write offof debts/loans/interest etc. made by a lender to the company due to the company's inability to repay the loan?",
+   "score": 0.371,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "review",
+   "demoted": "template",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1125,
+   "page": 75,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "• Difficulties in acquisition of land",
+   "score": 0.323,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "review",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1231,
+   "page": 79,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Accordingly, an amount of ₹ 179.29 crore (31 March 2018: ₹ Nil) for the year ended 31 March 2019 has been accounted for as 'Regulatory deferral account debit balance'.",
+   "score": 0.261,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "review",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 179.29 crore"
+   ],
+   "dates": [
+    "31 March 2018",
+    "31 March 2019"
+   ]
+  },
+  {
+   "id": 2969,
+   "page": 292,
+   "section": "AUDITOR_REPORT",
+   "scope": "standalone",
+   "text": "2012-13 to 2016-17 Appeal yet to be filed (Time limit not lapsed)",
+   "score": 0.229,
+   "category": "Legal",
+   "specificity": "Specific",
+   "tier": "review",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "2012-13",
+    "2016-17"
+   ]
+  },
+  {
+   "id": 2516,
+   "page": 161,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "In the absence of requisite number of independent Directors, the Company has not complied with the requirement pertaining to the composition of the Board of Directors to be constituted as per the DPE Guidelines and SEBI (Listing Obligations & Disclosure Requirements) Regulations, 2015.",
+   "score": 0.228,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "review",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1122,
+   "page": 74,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "The RMC has identified 25 risks, out of which 9 risks have been classified as the top risks for the Company:",
+   "score": 0.211,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "review",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1280,
+   "page": 81,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Decrease in deferred tax provision is mainly due to recognition of MAT credit entitlement during the year.",
+   "score": 0.151,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "review",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 3200,
+   "page": 378,
+   "section": "NOTES",
+   "scope": "consolidated",
+   "text": "In compliance to order of Delhi Polution Control Committee (DPCC) dated 25 July 2018, operations of one of the power stations of the Group has been permanently discontinued w.e.f.15",
+   "score": 0.097,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "review",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "25 July 2018"
+   ]
+  },
+  {
+   "id": 1281,
+   "page": 81,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "The Company has recognised MAT credit available to the Company in future amounting to ₹ 8,257.38 crore (31 March 2018: ₹ Nil) as the same is likely to give future economic benefits in the form of availability of set offagainst future income tax liability.",
+   "score": 0.087,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "review",
+   "demoted": "",
+   "severe": false,
+   "amounts": [
+    "₹ 8,257.38 crore"
+   ],
+   "dates": [
+    "31 March 2018"
+   ]
+  },
+  {
+   "id": 1804,
+   "page": 106,
+   "section": "CORP_GOV",
+   "scope": "standalone",
+   "text": "As powers of appointment of independent directors are vested with the Government of India and compliance was not within the powers of the Board of Directors, request was made to the Stock Exchanges for waiver of the Penalty.",
+   "score": 0.071,
+   "category": "Regulatory",
+   "specificity": "Specific",
+   "tier": "review",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 842,
+   "page": 63,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "The loan granted by your Company to its Joint Venture Company namely National High Power Test Laboratory Private Limited (NHPTL) during 2017-18 for a period of six months was extended upto 31st March 2021.",
+   "score": 0.066,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "review",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": [
+    "2017-18",
+    "31st March 2021"
+   ]
+  },
+  {
+   "id": 3459,
+   "page": 470,
+   "section": "AUDITOR_REPORT",
+   "scope": "consolidated",
+   "text": "In view of above, Item no. 5 regarding appointment of Shri Anurag Agarwal shall be withdrawn and all remaining items shall be re-numbered accordingly.",
+   "score": 0.054,
+   "category": "Financial",
+   "specificity": "Specific",
+   "tier": "review",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 814,
+   "page": 62,
+   "section": "BOARDS_REPORT",
+   "scope": "standalone",
+   "text": "Your Company is exposed to foreign exchange risk in respect of contracts denominated in foreign currency for purchase of plant and machinery, spares and fuel for its projects/ stations and foreign currency loans.",
+   "score": 0.991,
+   "category": "Financial",
+   "specificity": "Generic",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 3223,
+   "page": 380,
+   "section": "NOTES",
+   "scope": "consolidated",
+   "text": "As a result, regulatory deferral account debit/credit balance has increased with a corresponding increase in Deferred tax liabilities (net) as under:",
+   "score": 0.991,
+   "category": "Financial",
+   "specificity": "Generic",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1034,
+   "page": 71,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Other factors like cost for balancing services, reduced life due to flexible operation of thermal plant would also adversely affect the cost of generation.",
+   "score": 0.987,
+   "category": "Financial",
+   "specificity": "Generic",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1033,
+   "page": 71,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "This cyclic operation has impact on coal-based power plants in terms of lower efficiency at partial load leading to higher cost of generation.",
+   "score": 0.885,
+   "category": "Financial",
+   "specificity": "Generic",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  },
+  {
+   "id": 1529,
+   "page": 91,
+   "section": "MDA",
+   "scope": "standalone",
+   "text": "Actual results may vary materially from those expressed or implied by the forward-looking statements due to risks or uncertainties associated therewith depending upon economic conditions, government policies and other incidental factors.",
+   "score": 0.752,
+   "category": "Financial",
+   "specificity": "Generic",
+   "tier": "high",
+   "demoted": "",
+   "severe": false,
+   "amounts": [],
+   "dates": []
+  }
+ ],
+ "timing_s": {
+  "validate": 0.17,
+  "extract_sentences": 10.33,
+  "classify": 228.69,
+  "enrich": 0.04,
+  "summarise": 0.0
+ },
+ "total_s": 239.23,
+ "message": null
+}

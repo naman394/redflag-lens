@@ -70,3 +70,9 @@ Cut for time to one LLM summariser plus a rule-based verifier. The verifier is t
 
 **Did you test it on reports it had never seen at all?**
 Yes. On 25 Nov 2026 we ran two brand-new reports. SpiceJet FY2023 (distressed): 34 severe signs, 13.5 per 1,000 sentences, higher than any backtest report, including the going-concern material uncertainty, the qualified opinion, "unable to pay Rs 750 million" and lessors' IBC petitions (about 6 of the 34 are false alarms from the cargo business transfer "as a going concern"). Nestlé India FY2024 (healthy): 5 severe signs, 1.6 per 1,000, all false alarms (NCLT merger scheme, fraud KAM wording). See TECHNICAL_REPORT §8.1.
+
+**Can you get the best model's accuracy without a GPU?**
+Yes, with a two-step cascade (`REDFLAG_MODEL=cascade`). FinBERT scores every sentence; only the 7–12% it finds even slightly suspicious (score ≥ 0.05, its validation-tuned review threshold) are re-scored by DeBERTa. Test F1 0.83 against 0.84 for DeBERTa alone and 0.77 for FinBERT, at about 2–4 minutes per report on a laptop. On the fresh reports it flagged 25 severe sentences for SpiceJet, all real (8 separate problems), and 2 for Nestlé, both the NCLT merger. The 8-report backtest gives the same AUC (0.94; 1.00 on the 5 unseen reports) with cleaner findings.
+
+**Do you run three DeBERTa models in production?**
+No. The 0.86 is the 3-seed ensemble measured on a GPU. Only one DeBERTa model was saved (F1 0.84), and that is the one the app and the cascade use.

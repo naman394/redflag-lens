@@ -268,6 +268,24 @@ Scored on the laptop (CPU, float32), test v1.1, 600 sentences:
 3. **DeBERTa's category head is weak** (macro-F1 0.29; correct category on about half of detected risks). The next step is a hybrid: DeBERTa decides *whether* a sentence is a risk, and FinBERT assigns the category.
 4. **Speed for laptops:** distilling DeBERTa into a smaller model is the main option.
 
+### 4.8 Two-step cascade on CPU (iteration v14)
+
+**Idea.** FinBERT is fast on a CPU but less accurate; DeBERTa-v3-large is more accurate but about 8× slower. In the cascade, FinBERT scores every sentence and supplies the category; only sentences with a FinBERT score ≥ 0.05 are re-scored by the saved DeBERTa model (`models/debv3l_aug`). The gate 0.05 is FinBERT's existing validation-tuned review threshold, so nothing was tuned on test. Code: `Cascade` in `src/app/pipeline.py` (`REDFLAG_MODEL=cascade`); evaluation: `src/eval/cascade.py`, `reports/eval/cascade.json`.
+
+**Test set v1.1 (600 sentences, 37 risk), threshold 0.5, laptop CPU:**
+
+| Setup | Precision | Recall | F1 | Risks lost at the gate |
+|---|---|---|---|---|
+| FinBERT alone (app default) | 0.70 | 0.84 | 0.77 | — |
+| DeBERTa-v3-large + aug alone (saved single model) | 0.79 | 0.89 | 0.84 | — |
+| **Cascade, gate 0.05** | **0.80** | **0.86** | **0.83** | 3 (of 37) |
+| Cascade, gate 0.01 | 0.79 | 0.89 | 0.84 | 0 |
+| Cascade, gate 0.1 / 0.2 | 0.80 | 0.84 | 0.82 | 4 |
+
+**Cost on full reports (classification only, laptop):** the gate passes 7% of TCS's sentences and 12% of Jet Airways'. Classification takes 2.2 and 2.5 minutes, against 1.3–1.5 minutes for FinBERT alone and about 9–10 minutes for DeBERTa alone. With PDF extraction and rules, the whole pipeline took 3.2–4.3 minutes on the two fresh reports (§8.1), slightly above the 3-minute target.
+
+**Decision.** The cascade gives almost all of DeBERTa's gain on a CPU. FinBERT stays the fastest option for a laptop; the cascade is the recommended CPU setup when about 4 minutes per report is acceptable, and DeBERTa on a GPU remains the fastest accurate setup.
+
 ## 5. Product (M5)
 
 **Pipeline** (`src/app/pipeline.py`):
@@ -386,6 +404,23 @@ The question: does the output tell a distressed company's report from a healthy 
 | Specific flags / 1k sentences | 0.63 | — |
 | **Severe signs / 1k sentences** | **0.94** | **1.00** |
 
+**Third run, with the two-step cascade (§4.8; `REDFLAG_MODEL=cascade src/eval/backtest.py`, `reports/backtest/cascade/`):**
+
+| Report | Group | Severe (FinBERT run) | Severe (cascade) | Severe / 1k (cascade) |
+|---|---|---|---|---|
+| RCOM FY2018 | distressed (val) | 29 | 35 | **12.27** |
+| Jet Airways FY2018 | distressed (test) | 9 | 9 | **4.61** |
+| Yes Bank FY2019 | distressed (test) | 9 | 7 | **2.02** |
+| Titan FY2019 | healthy (val) | 3 | 3 | 1.10 |
+| Gensol FY2024 | distressed (held out) | 2 | 3 | **1.04** |
+| NTPC FY2019 | healthy (val) | 2 | 2 | 0.58 |
+| Maruti FY2019 | healthy (test) | 1 | 0 | 0.00 |
+| TCS FY2019 | healthy (test) | 0 | 0 | 0.00 |
+
+- **Separation is unchanged:** severe signs / 1k give ROC-AUC 0.94 on all 8 reports and 1.00 on Gensol + test companies; the raw flag rate gives 0.56 and 0.33 (`reports/backtest/cascade/auc.json`). Gensol vs Titan (1.04 vs 1.10) is still the only misordered pair.
+- **Cleaner severe findings:** Gensol's three are all real (p.100 discrepancies in stock statements submitted to the bank, now caught; p.184 going concern; p.187 adverse remark). Maruti's routine going-concern statement is gone. Yes Bank keeps four noisy matches (three share acquisitions caught by the pledge term, "downgraded World GDP growth") next to real ones (whistle-blower complaint, NPA classification).
+- **Time:** 1.9–4.0 minutes per report on the laptop, against about 2.5 for FinBERT alone.
+
 **Gensol, a year before collapse.** The two severe findings lead the summary:
 - p.187: the subsidiary auditor's adverse remark on Scorpius Trackers;
 - p.184: "conditions that may cast significant doubt on the Group's ability to continue as a going concern".
@@ -416,3 +451,14 @@ To check the pipeline on documents outside every split, we downloaded two new re
 - **SpiceJet** scores above every report in the 8-report backtest. The severe findings include the auditor's "Material Uncertainty Related to Going Concern" (p.76, p.94, p.148), the qualified opinion (p.80, p.152), "unable to pay Rs. 750.00 million" (p.25), a stay application against the bank declaring the loan NPA (p.118), lessors' Section 9 IBC petitions (p.131) and negative net worth (p.145). About 6 of the 34 are false alarms: the cargo business transfer "as a going concern" (p.25, p.33, p.37, p.132, p.200) and the standard IBC disclosure heading (p.30).
 - **Nestlé** falls in the healthy range. All 5 severe findings are false alarms: an NCLT merger scheme (p.108, p.146), the standard revenue-fraud key audit matter (p.114), a business transfer agreement (p.134) and CARO clause (xix) (p.122).
 - **Lesson:** the severe lexicon should distinguish NCLT *schemes* and business transfers "as a going concern" from insolvency and going-concern *doubt*. We did not change the lexicon after this test.
+
+**Re-run with the cascade (`REDFLAG_MODEL=cascade`, `reports/backtest/new_unseen/cascade/`).** Every severe finding was checked by hand.
+
+| Report | Flags / 1k | Severe | Severe / 1k | Severe findings that are real | Time |
+|---|---|---|---|---|---|
+| SpiceJet FY2023 | 110.1 | 25 | **9.94** | **25 of 25**, covering 8 separate problems | 260 s |
+| Nestlé India FY2024 | 16.2 | 2 | **0.65** | 0 of 2 (both the NCLT merger scheme) | 194 s |
+
+- All nine weak or false SpiceJet severe findings from the FinBERT run disappeared (cargo business transfer "as a going concern" ×5, the IBC disclosure heading, "will continue as a going concern" ×2, the one-time-gain sentence, a ratio-table line), and all 8 real problems are still found: going-concern material uncertainty, "unable to pay Rs. 750.00 million", the qualified opinion, net loss and negative net worth, lessors' IBC petitions, the bank's move to classify the loan as NPA, Rs. 15,549 million of doubtful recoverables, and material weakness in internal controls.
+- Nestlé's false alarms fell from 5 to 2; the remaining two are the NCLT merger scheme, a lexicon problem rather than a classifier problem.
+- Precision of the severe tier across both reports rose from about 70% (FinBERT) to 25 of 27 (93%).

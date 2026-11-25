@@ -1,25 +1,21 @@
 <section id="backtest" class="alt" data-transition="fade">
 <div class="head">
-<p class="eyebrow">M4 · Backtest on whole reports</p>
-<h2>Severe warning signs separate failed companies from healthy ones</h2>
+<p class="eyebrow">M4 · Backtest on whole reports the model never used</p>
+<h2>Severe warning signs put every failed company above every healthy one</h2>
 </div>
 <div class="row" style="gap:56px;align-items:flex-start">
-<div class="col rise" style="--i:0;gap:12px;flex:0 0 1040px">
+<div class="col rise" style="--i:0;gap:16px;flex:0 0 1040px">
 <p class="small" style="font-weight:600;color:#0F2236">Severe signs per 1,000 sentences</p>
-<div class="row" style="gap:20px;align-items:center"><p class="small" style="width:300px">RCOM · failed</p><div class="bar flag" style="width:560px"></div><p class="small">10.16</p></div>
-<div class="row" style="gap:20px;align-items:center"><p class="small" style="width:300px">Jet Airways · failed</p><div class="bar flag" style="width:254px"></div><p class="small">4.61</p></div>
-<div class="row" style="gap:20px;align-items:center"><p class="small" style="width:300px">Yes Bank · failed</p><div class="bar flag" style="width:143px"></div><p class="small">2.59</p></div>
-<div class="row" style="gap:20px;align-items:center"><p class="small" style="width:300px">Titan · healthy</p><div class="bar" style="width:61px"></div><p class="small">1.10</p></div>
-<div class="row" style="gap:20px;align-items:center"><p class="small" style="width:300px">Gensol · failed</p><div class="bar flag" style="width:39px"></div><p class="small">0.70</p></div>
-<div class="row" style="gap:20px;align-items:center"><p class="small" style="width:300px">NTPC · healthy</p><div class="bar" style="width:32px"></div><p class="small">0.58</p></div>
-<div class="row" style="gap:20px;align-items:center"><p class="small" style="width:300px">Maruti · healthy</p><div class="bar" style="width:23px"></div><p class="small">0.41</p></div>
+<div class="row" style="gap:20px;align-items:center"><p class="small" style="width:300px">Jet Airways · failed</p><div class="bar flag" style="width:560px"></div><p class="small">4.61</p></div>
+<div class="row" style="gap:20px;align-items:center"><p class="small" style="width:300px">Yes Bank · failed</p><div class="bar flag" style="width:245px"></div><p class="small">2.02</p></div>
+<div class="row" style="gap:20px;align-items:center"><p class="small" style="width:300px">Gensol · failed</p><div class="bar flag" style="width:126px"></div><p class="small">1.04</p></div>
+<div class="row" style="gap:20px;align-items:center"><p class="small" style="width:300px">Maruti · healthy</p><div class="bar" style="width:4px"></div><p class="small">0.00</p></div>
 <div class="row" style="gap:20px;align-items:center"><p class="small" style="width:300px">TCS · healthy</p><div class="bar" style="width:4px"></div><p class="small">0.00</p></div>
+<p class="small" style="margin-top:8px">Gensol was held out from everything. Jet, Yes Bank, Maruti and TCS are the test companies. Model: two-step (FinBERT screens, DeBERTa re-checks).</p>
 </div>
 <div class="col rise" style="--i:1;gap:24px">
-<div class="card" style="padding:28px 32px"><p class="num flag">0.94</p><p class="lbl">ROC-AUC with severe signs. 1.0 = every failed company ranks above every healthy one.</p></div>
-<div class="card" style="padding:28px 32px"><p class="num">0.50</p><p class="lbl">ROC-AUC with all flags: a coin toss.</p></div>
+<div class="card" style="padding:28px 32px"><p class="num flag">1.00</p><p class="lbl">ROC-AUC with severe signs: every failed company ranks above every healthy one.</p></div>
 </div>
 </div>
-<p class="footer">10 · Gensol (never seen): the tool found the auditor’s adverse remark on p.187 and a going-concern note on p.184.</p>
-<aside>This is the most important slide. Instead of single sentences, we ran the full tool on eight whole reports: four from companies that failed and four healthy ones. Then we counted severe warning signs per thousand sentences. Orange bars are failed companies, blue bars are healthy. Reliance Communications, Jet Airways and Yes Bank are clearly at the top, and TCS has zero. The ROC-AUC is 0.94, which means that if you pick one failed and one healthy company at random, the tool ranks the failed one higher 94 percent of the time. If we just count all flags, the score is 0.50, a coin toss, because healthy companies also write a lot about risk. So severity matters, not volume. Gensol is lower than Titan, but it still found the two key warnings: the auditor’s adverse remark on page 187 and a going-concern note on page 184. Note that this is only eight reports, so it is promising, not proof.</aside>
+<aside>This is the most important slide. Instead of single sentences, we ran the full tool on whole reports that the model never used for anything: Gensol, which was held out from everything, and the four test companies. We used our two-step model: FinBERT quickly screens every sentence and our best model, DeBERTa, re-checks the suspicious ones. Then we counted severe warning signs per thousand sentences. Orange bars are companies that failed, blue bars are healthy ones. Every failed company is above every healthy one, so the ROC-AUC is 1.00, and the two healthy companies have zero severe signs. If we just count all flags, the score is only 0.33, because healthy companies also write a lot about risk. So severity matters, not volume. For Gensol, all three severe signs are real, a year before it collapsed: the auditor’s adverse remark on page 187, a going-concern note on page 184, and discrepancies in the stock statements it gave its bank on page 100. If we also add the three validation companies, which we used to tune settings, the score is 0.94 on eight reports; the one pair it gets wrong is Titan just above Gensol, because Titan’s report has real credit-risk signs from its IL&FS exposure. This is a small sample, so it is promising, not proof.</aside>
 </section>

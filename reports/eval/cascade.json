@@ -1,0 +1,116 @@
+{
+ "test_v11": {
+  "finbert_alone": {
+   "precision": 0.705,
+   "recall": 0.838,
+   "f1": 0.765,
+   "tp": 31,
+   "fp": 13,
+   "fn": 6
+  },
+  "deberta_alone": {
+   "precision": 0.786,
+   "recall": 0.892,
+   "f1": 0.835,
+   "tp": 33,
+   "fp": 9,
+   "fn": 4
+  },
+  "cascade": {
+   "0.01": {
+    "precision": 0.786,
+    "recall": 0.892,
+    "f1": 0.835,
+    "tp": 33,
+    "fp": 9,
+    "fn": 4,
+    "risks_lost_at_step1": 0,
+    "share_passed_on_test": 0.438
+   },
+   "0.02": {
+    "precision": 0.78,
+    "recall": 0.865,
+    "f1": 0.821,
+    "tp": 32,
+    "fp": 9,
+    "fn": 5,
+    "risks_lost_at_step1": 2,
+    "share_passed_on_test": 0.203
+   },
+   "0.05": {
+    "precision": 0.8,
+    "recall": 0.865,
+    "f1": 0.831,
+    "tp": 32,
+    "fp": 8,
+    "fn": 5,
+    "risks_lost_at_step1": 3,
+    "share_passed_on_test": 0.117
+   },
+   "0.1": {
+    "precision": 0.795,
+    "recall": 0.838,
+    "f1": 0.816,
+    "tp": 31,
+    "fp": 8,
+    "fn": 6,
+    "risks_lost_at_step1": 4,
+    "share_passed_on_test": 0.098
+   },
+   "0.2": {
+    "precision": 0.795,
+    "recall": 0.838,
+    "f1": 0.816,
+    "tp": 31,
+    "fp": 8,
+    "fn": 6,
+    "risks_lost_at_step1": 4,
+    "share_passed_on_test": 0.088
+   },
+   "0.3": {
+    "precision": 0.833,
+    "recall": 0.811,
+    "f1": 0.822,
+    "tp": 30,
+    "fp": 6,
+    "fn": 7,
+    "risks_lost_at_step1": 5,
+    "share_passed_on_test": 0.08
+   }
+  }
+ },
+ "full_reports": {
+  "TCS": {
+   "sentences": 2497,
+   "finbert_s": 91.3,
+   "finbert_ms_per_sentence": 36.6,
+   "share_passed": {
+    "0.01": 0.444,
+    "0.02": 0.137,
+    "0.05": 0.073,
+    "0.1": 0.058,
+    "0.2": 0.048,
+    "0.3": 0.046
+   },
+   "deberta_on_passed_t0.05_s": 40.9,
+   "deberta_ms_per_sentence": 223.4,
+   "cascade_total_t0.05_s": 132.1
+  },
+  "JETAIRWAYS": {
+   "sentences": 1954,
+   "finbert_s": 80.9,
+   "finbert_ms_per_sentence": 41.4,
+   "share_passed": {
+    "0.01": 0.433,
+    "0.02": 0.19,
+    "0.05": 0.12,
+    "0.1": 0.096,
+    "0.2": 0.076,
+    "0.3": 0.068
+   },
+   "deberta_on_passed_t0.05_s": 68.5,
+   "deberta_ms_per_sentence": 291.3,
+   "cascade_total_t0.05_s": 149.4
+  }
+ }
+}

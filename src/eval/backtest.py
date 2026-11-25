@@ -7,7 +7,7 @@ Severe warning signs use the fixed lexicon in src/models/rules.py (written befor
   python src/eval/backtest.py
 Writes reports/backtest/<company>.json and reports/backtest/summary.csv
 """
-import json, sys
+import json, os, sys
 from pathlib import Path
 
 import pandas as pd
@@ -22,7 +22,8 @@ REPORTS = [("GENSOL_FY2024", "distressed (backtest, collapsed 2025)"), ("JETAIRW
 
 
 def main():
-    out = ROOT / "reports/backtest"
+    model = os.environ.get("REDFLAG_MODEL", "finbert")
+    out = ROOT / "reports/backtest" / ("" if model == "finbert" else model)  # other models write to a subfolder
     out.mkdir(parents=True, exist_ok=True)
     rows = []
     for name, group in REPORTS:
@@ -36,7 +37,21 @@ def main():
                      "demoted_template_or_boilerplate": r["n_demoted"],
                      "review_tier": r["n_review"], "seconds": r["total_s"], **{f"cat_{k}": v for k, v in r["by_category"].items()}})
         print(rows[-1], flush=True)
-    pd.DataFrame(rows).fillna(0).to_csv(out / "summary.csv", index=False)
+    df = pd.DataFrame(rows).fillna(0)
+    df.to_csv(out / "summary.csv", index=False)
+    (out / "auc.json").write_text(json.dumps(auc_table(df), indent=1))
+
+
+def auc(df, col):
+    """ROC-AUC of a per-report score for distressed vs healthy (share of pairs ordered correctly, ties = 0.5)."""
+    d = df[df.group.str.startswith("distressed")][col]; h = df[df.group.str.startswith("healthy")][col]
+    return round(sum((a > b) + 0.5 * (a == b) for a in d for b in h) / (len(d) * len(h)), 3)
+
+
+def auc_table(df):
+    unseen = df[~df.group.str.contains("val")]  # Gensol + test companies only: never used for any choice
+    return {col: {"all_8": auc(df, col), "gensol_and_test_5": auc(unseen, col)}
+            for col in ["flags_per_1000_sentences", "specific_per_1000", "severe_per_1000"]}
 
 
 if __name__ == "__main__":

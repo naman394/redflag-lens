@@ -2,11 +2,11 @@
 
 SPICEJET_FY2023 (airline in financial distress) and NESTLEIND_FY2024 (healthy). Both PDFs were downloaded
 from BSE / NSE into data/raw/new_test/ (git-ignored, like data/raw/inbox/). Uses the app model (REDFLAG_MODEL,
-default finbert) and no LLM.
+default finbert; other models write to a subfolder) and no LLM.
   python src/eval/new_reports.py
 Writes reports/backtest/new_unseen/<report>.json and summary.csv
 """
-import json, sys
+import json, os, sys
 from pathlib import Path
 
 import pandas as pd
@@ -19,7 +19,8 @@ REPORTS = [("SPICEJET_FY2023", "distressed (new, unseen)"), ("NESTLEIND_FY2024",
 
 
 def main():
-    out = ROOT / "reports/backtest/new_unseen"
+    model = os.environ.get("REDFLAG_MODEL", "finbert")
+    out = ROOT / "reports/backtest/new_unseen" / ("" if model == "finbert" else model)
     out.mkdir(parents=True, exist_ok=True)
     rows = []
     for name, group in REPORTS:

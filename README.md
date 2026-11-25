@@ -31,7 +31,12 @@ See docs/TECHNICAL_REPORT.md §8 for caveats.
 - SpiceJet FY2023 (distressed): **34 severe signs, 13.5 per 1,000 sentences**, including going-concern material uncertainty, a qualified opinion, "unable to pay Rs 750 million" and lessors' IBC petitions. About 6 of the 34 are false alarms.
 - Nestlé India FY2024 (healthy): **5 severe signs, 1.6 per 1,000**, all false alarms (NCLT merger scheme, standard audit wording). See TECHNICAL_REPORT §8.1.
 
-**Final deliverables:** [final report (PDF)](docs/RedFlagLens_Final_Report.pdf) · [technical report](docs/TECHNICAL_REPORT.md) · [viva prep](docs/VIVA_PREP.md) · final slide deck link in [presentation/DECK_LINK.txt](presentation/DECK_LINK.txt), slide source in `presentation/final_deck_source/`.
+**Two-step cascade on CPU** (`REDFLAG_MODEL=cascade`, TECHNICAL_REPORT §4.8): FinBERT screens every sentence and DeBERTa re-scores only those with FinBERT score ≥ 0.05 (7–12% of a report).
+- Test v1.1: F1 **0.83** (precision 0.80, recall 0.86), against 0.77 for FinBERT alone and 0.84 for DeBERTa alone; about 2–4 minutes per report on a laptop CPU.
+- Backtest: same separation (ROC-AUC 0.94 on 8 reports, 1.00 on the 5 never used for any choice) with cleaner severe findings.
+- Fresh reports: SpiceJet **25 severe findings, all 25 real** (8 separate problems); Nestlé **2**, both the NCLT merger scheme (false alarms).
+
+**Final deliverables:** [IEEE paper (PDF)](docs/RedFlagLens_IEEE_Report.pdf) · [final report (PDF)](docs/RedFlagLens_Final_Report.pdf) · [technical report](docs/TECHNICAL_REPORT.md) · [viva prep](docs/VIVA_PREP.md) · final slide deck link in [presentation/DECK_LINK.txt](presentation/DECK_LINK.txt), slide source in `presentation/final_deck_source/`.
 
 Details, error analysis, robustness and limitations: [docs/TECHNICAL_REPORT.md](docs/TECHNICAL_REPORT.md). Every run is logged in [reports/experiments.csv](reports/experiments.csv).
 

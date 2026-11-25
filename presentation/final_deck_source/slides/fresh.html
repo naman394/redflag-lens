@@ -1,24 +1,35 @@
 <section id="fresh" class="dark" data-transition="fade">
 <div class="head">
-<p class="eyebrow">Fresh test · two brand-new reports</p>
-<h2>A struggling airline and a healthy food company, never seen before</h2>
+<p class="eyebrow">Fresh test · 10 brand-new reports</p>
+<h2>Final exam: four reports nobody had opened</h2>
 </div>
 <div class="row">
 <div class="card rise" style="--i:0">
-<p class="pill warn">SpiceJet FY2023 · in trouble</p>
-<p class="num">25</p>
-<p class="lbl">sentences flagged as severe (9.9 per 1,000), higher than any report in our backtest except RCOM</p>
-<p class="small" style="color:#F3F5F7"><b>After checking each one: all 25 are real, covering 8 separate problems.</b></p>
-<p class="small" style="color:#E3EAF1">Going-concern doubt, “unable to pay” ₹750 million, a qualified audit opinion, lessors’ insolvency (IBC) petitions.</p>
+<p class="pill warn">Reliance Infra FY2020</p>
+<p class="num" style="font-size:72px">20.1</p>
+<p class="lbl">severe per 1,000 sentences</p>
+<p class="small" style="color:#E3EAF1">Auditor could not give an opinion; lenders sold pledged shares; insolvency petitions</p>
 </div>
 <div class="card rise" style="--i:1">
-<p class="pill good">Nestlé India FY2024 · healthy</p>
-<p class="num" style="color:#8FC0EC">2</p>
-<p class="lbl">sentences flagged as severe (0.65 per 1,000), in the healthy range</p>
-<p class="small" style="color:#F3F5F7"><b>After checking each one: 0 are real warning signs.</b></p>
-<p class="small" style="color:#E3EAF1">Both are about a merger scheme approved at the NCLT, which is normal business.</p>
+<p class="pill warn">Sintex FY2020</p>
+<p class="num" style="font-size:72px">10.0</p>
+<p class="lbl">severe per 1,000 sentences</p>
+<p class="small" style="color:#E3EAF1">Loan defaults, rating cut to D, going-concern doubt. All 23 flags real</p>
+</div>
+<div class="card rise" style="--i:2">
+<p class="pill good">Dabur FY2023</p>
+<p class="num" style="font-size:72px;color:#8FC0EC">0.9</p>
+<p class="lbl">severe per 1,000 sentences</p>
+<p class="small" style="color:#E3EAF1">A supplier’s ₹1.7 crore claim, and “consumers downgraded” packs</p>
+</div>
+<div class="card rise" style="--i:3">
+<p class="pill good">Hero MotoCorp FY2024</p>
+<p class="num" style="font-size:72px;color:#8FC0EC">0.4</p>
+<p class="lbl">severe per 1,000 sentences</p>
+<p class="small" style="color:#E3EAF1">Real events, not distress: a fraud where Hero was the victim, an ED visit</p>
 </div>
 </div>
-<p class="footer">10 · Two-step model (FinBERT screens, DeBERTa re-checks). Neither company was in any training, validation or test set.</p>
-<aside>To check the tool on something truly new, we downloaded two reports it had never seen: SpiceJet 2023, an airline in serious financial trouble, and Nestlé India 2024, a very healthy company. We ran our two-step model: FinBERT screens every sentence and DeBERTa re-checks the suspicious ones. For SpiceJet it flagged 25 sentences as severe, and we checked every one by hand: all 25 are real. They cover 8 separate problems, like the auditor doubting the company can survive, being unable to pay 750 million rupees, a qualified audit opinion, and aircraft lessors filing insolvency petitions. For Nestlé it flagged only 2, and both are about a normal merger approved at the NCLT, so there are zero real warning signs. So it is 8 real problems for the struggling airline against none for the healthy company. The last two false alarms show exactly what to fix next: teaching the severe list that the NCLT also approves mergers, not only insolvency cases.</aside>
+<p class="small" style="color:#F3F5F7"><b>Every failed company above every healthy one here. On all 10 new reports: 0.96.</b> The one miss is Future Retail, whose report was written before it defaulted.</p>
+<p class="footer">10 · Two-step model · severe list v2 (RBI early-warning signs), checked on training companies only</p>
+<aside>To test the tool on truly new material we used ten annual reports that were never in any of our data. After the first six, we improved the severe warning list using RBI's early-warning signs, such as lenders selling pledged shares or a breach of loan conditions, and we taught it that a merger approved at the NCLT is normal business. Because those six had shown us the mistakes, we treated them as practice. We checked the new rules only on training companies, froze them, and then downloaded four new reports as a final exam. Reliance Infrastructure scored 20 severe signs per thousand sentences: the auditor could not even give an opinion on its accounts. Sintex scored 10, with loan defaults and a credit rating cut to D, and all 23 flags were real. The two healthy companies, Dabur and Hero, scored below one. So every failed company ranks above every healthy one. Across all ten new reports the score is 0.96. The one miss is Future Retail: its report was written before it defaulted, so the danger words were not there yet. That is our next challenge, early warning.</aside>
 </section>

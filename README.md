@@ -36,6 +36,10 @@ See docs/TECHNICAL_REPORT.md §8 for caveats.
 - Backtest: same separation (ROC-AUC 0.94 on 8 reports, 1.00 on the 5 never used for any choice) with cleaner severe findings.
 - Fresh reports: SpiceJet **25 severe findings, all 25 real** (8 separate problems); Nestlé **2**, both the NCLT merger scheme (false alarms).
 
+**Severity v2 and a clean exam** (TECHNICAL_REPORT §8.2–8.4): the severe list gained RBI early-warning signals (pledged shares invoked, covenant breach, unpaid statutory dues, inter-creditor agreements, debt resolution plans) and context filters (auditor template text, business transfer "as a going concern", NCLT merger schemes). Checked sentence by sentence on the 16 training companies only, then frozen and tested on four reports opened afterwards:
+- Reliance Infrastructure FY2020 **20.1** and Sintex FY2020 **10.0** severe per 1,000 (distressed) against Dabur FY2023 **0.9** and Hero MotoCorp FY2024 **0.4** (healthy): AUC 1.00.
+- All 10 fresh reports: AUC **0.92 to 0.96**. The miss is Future Retail FY2020, written before its default: early signs were flagged (debt more than tripled, pledged shares invoked) but its severe rate (0.88) ties Dabur's (0.89).
+
 **Final deliverables:** [IEEE paper (PDF)](docs/RedFlagLens_IEEE_Report.pdf) · [final report (PDF)](docs/RedFlagLens_Final_Report.pdf) · [technical report](docs/TECHNICAL_REPORT.md) · [viva prep](docs/VIVA_PREP.md) · final slide deck link in [presentation/DECK_LINK.txt](presentation/DECK_LINK.txt), slide source in `presentation/final_deck_source/`.
 
 Details, error analysis, robustness and limitations: [docs/TECHNICAL_REPORT.md](docs/TECHNICAL_REPORT.md). Every run is logged in [reports/experiments.csv](reports/experiments.csv).

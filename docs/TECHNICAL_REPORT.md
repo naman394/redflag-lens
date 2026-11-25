@@ -450,7 +450,7 @@ To check the pipeline on documents outside every split, we downloaded two new re
 
 - **SpiceJet** scores above every report in the 8-report backtest. The severe findings include the auditor's "Material Uncertainty Related to Going Concern" (p.76, p.94, p.148), the qualified opinion (p.80, p.152), "unable to pay Rs. 750.00 million" (p.25), a stay application against the bank declaring the loan NPA (p.118), lessors' Section 9 IBC petitions (p.131) and negative net worth (p.145). About 6 of the 34 are false alarms: the cargo business transfer "as a going concern" (p.25, p.33, p.37, p.132, p.200) and the standard IBC disclosure heading (p.30).
 - **Nestlé** falls in the healthy range. All 5 severe findings are false alarms: an NCLT merger scheme (p.108, p.146), the standard revenue-fraud key audit matter (p.114), a business transfer agreement (p.134) and CARO clause (xix) (p.122).
-- **Lesson:** the severe lexicon should distinguish NCLT *schemes* and business transfers "as a going concern" from insolvency and going-concern *doubt*. We did not change the lexicon after this test.
+- **Lesson:** the severe lexicon should distinguish NCLT *schemes* and business transfers "as a going concern" from insolvency and going-concern *doubt*. The lexicon was not changed at the time; this lesson led to severity v2 (§8.3), which is why these reports count as development data for v2.
 
 **Re-run with the cascade (`REDFLAG_MODEL=cascade`, `reports/backtest/new_unseen/cascade/`).** Every severe finding was checked by hand.
 
@@ -462,3 +462,52 @@ To check the pipeline on documents outside every split, we downloaded two new re
 - All nine weak or false SpiceJet severe findings from the FinBERT run disappeared (cargo business transfer "as a going concern" ×5, the IBC disclosure heading, "will continue as a going concern" ×2, the one-time-gain sentence, a ratio-table line), and all 8 real problems are still found: going-concern material uncertainty, "unable to pay Rs. 750.00 million", the qualified opinion, net loss and negative net worth, lessors' IBC petitions, the bank's move to classify the loan as NPA, Rs. 15,549 million of doubtful recoverables, and material weakness in internal controls.
 - Nestlé's false alarms fell from 5 to 2; the remaining two are the NCLT merger scheme, a lexicon problem rather than a classifier problem.
 - Precision of the severe tier across both reports rose from about 70% (FinBERT) to 25 of 27 (93%).
+
+### 8.2 Second fresh batch: four more reports (25 Nov 2026)
+
+Two distressed and two healthy reports, none in any split or earlier test, run with the cascade (`NEW_BATCH=2 REDFLAG_MODEL=cascade src/eval/new_reports.py`, output `reports/backtest/new_unseen_2/cascade/`). FY2021 full filings for the distressed pair were not available as text PDFs, so FY2020 was used. Every severe finding was checked by hand. Severity v1.
+
+| Report | Group | Sentences | Flags / 1k | Severe | Severe / 1k | Real severe findings |
+|---|---|---|---|---|---|---|
+| Vodafone Idea FY2020 | distressed (AGR dues) | 4,034 | 71.4 | 18 | **4.46** | 18 of 18: going-concern material uncertainty, survival dependent on Supreme Court AGR ruling, debt-covenant breach, rating cuts AA- to BB-, payments-bank wind-up |
+| Future Retail FY2020 | distressed (defaulted later in 2020, insolvency 2022) | 2,263 | 29.2 | 1 | **0.44** | 0 of 1: "transfer ... as a going concern on a slump sale basis" |
+| Bajaj Auto FY2024 | healthy | 3,150 | 13.0 | 1 | **0.32** | 1 of 1, minor: one employee's fraud |
+| Britannia FY2024 | healthy | 2,651 | 26.4 | 0 | **0.00** | none |
+
+- Ranking is correct (AUC 1.00 on these four) but Future Retail is above Bajaj Auto only because of a false alarm.
+- **Why Future Retail is low:** the FY2020 report predates the default. Its auditor wrote that the company "has not defaulted in repayment of loans", with no going-concern paragraph. The model did flag the early signs (debt up from Rs 2,554 cr to Rs 8,763 cr, "retailers have started running out of cash", lenders invoking pledged promoter shares) but none matched the v1 severe lexicon. The severe score detects distress that is already disclosed; it is weak one year ahead.
+
+### 8.3 Severity v2: RBI early-warning additions and context filters (iteration v15)
+
+Severity is a text rule on the classifier's high-confidence findings (`src/models/rules.py`), so changing it needs no retraining and can be evaluated on saved outputs (`src/eval/severity_v2.py`, `reports/eval/severity_v2.json`). The v1 rule is kept as `is_severe_v1`.
+
+**Added** (RBI early-warning signals for stressed accounts): lenders invoking pledged shares in any word order; debt-covenant breach; CARO 3(vii)(a) statutory dues outstanding over six months; inter-creditor agreement, one-time restructuring and CIRP; "resolution plan" only when it concerns the company's own lenders or debt (not a healthy acquirer buying an IBC asset); "National Company Law Tribunal" spelled out.
+
+**Context filters** (spans removed before matching, so a sentence with another real signal stays severe): the standard auditor-responsibility paragraph ("whether a material uncertainty exists", "cease to continue as a going concern"); the directors' statement "prepared the annual accounts on a going concern basis"; "as a going concern" when the sentence describes a business transfer or slump sale; NCLT when the sentence is about a merger or scheme without insolvency, default or restructuring words; the CARO nil clause "no order has been passed by"; downgrades of GDP or growth forecasts.
+
+**Check on training companies only.** On all 66,879 sentences of the 16 training companies, read one by one where the result changed: healthy companies lost 83 severe hits (75 auditor template, 8 merger or business transfer) and gained 5 (Tata Steel's pension-dues arrears and IBC-acquisition resolution plan; one NCLT order transferring a registrar's operations); distressed companies gained 35 real signals (Jaypee and Reliance Capital pledge invocations, DHFL and Reliance Capital debt resolution plans and ICAs, Jaypee CIRP and unpaid statutory dues) and lost 37 (25 template, 12 merger-scheme sentences).
+
+**Effect on saved outputs (cascade).**
+
+| Set | AUC v1 | AUC v2 | Changes |
+|---|---|---|---|
+| Backtest, 8 reports | 0.938 | 0.938 | RCOM +4 real (debt resolution plan) and -3 (failed merger, scheme withdrawal, directors' statement); Yes Bank -1 (GDP forecast) |
+| Fresh 6 (§8.1, §8.2) | 0.889 | 1.000 | Nestlé 0.65 to 0.00 (merger at NCLT removed); Future Retail 0.44 to 0.88 (false slump-sale flag removed, two real pledge invocations added) |
+
+The fresh 6 shaped two of the filters, so they are development data for v2. The backtest stays at 0.938 because Titan (1.10, exposure to IL&FS) sits above Gensol (1.04); the lexicon cannot tell "a company I lent to failed" from "I am failing".
+
+### 8.4 Clean exam for severity v2: four reports opened after the rules were frozen (25 Nov 2026)
+
+The rules file was frozen (md5 `c1164931...`, unchanged after the run) before these four reports were downloaded (`NEW_BATCH=3`, `reports/backtest/new_unseen_3/cascade/`). Every severe finding was read.
+
+| Report | Group | Sentences | Flags / 1k | Severe | Severe / 1k (v1 to v2) | Severe findings |
+|---|---|---|---|---|---|---|
+| Reliance Infrastructure FY2020 | distressed | 3,429 | 110.5 | 69 | 19.54 to **20.12** | about 65 of 69 real: auditor's **disclaimer of opinion**, Rs 3,051 cr loss on lenders invoking pledged RPower shares, going-concern uncertainty at six subsidiaries, NPA, IBC petitions, debt resolution plan; the rest are lines that only refer to the disclaimer, and one late-payment-surcharge sentence |
+| Sintex Industries FY2020 | distressed (CIRP 2021, sold 2023) | 2,290 | 96.9 | 23 | 9.17 to **10.04** | 23 of 23 real: loan and bond-interest defaults, lenders recalling loans, rating cut to BWR D, going-concern doubt, ICA, rejected resolution plan, IBC petitions |
+| Dabur India FY2023 | healthy | 5,649 | 24.3 | 5 | 1.06 to **0.89** | 3 about one supplier's Rs 1.68 cr IBC petition (real, immaterial); 2 false ("consumers downgraded to cheaper packs") |
+| Hero MotoCorp FY2024 | healthy | 5,007 | 21.2 | 2 | 0.40 to **0.40** | 2 real events, not distress: outsiders' fraud with fake FD receipts (Hero the victim); an Enforcement Directorate visit |
+
+- **AUC 1.00** on the clean four, with a wide margin (lowest distressed 10.04, highest healthy 0.89). Every v1-to-v2 change here was correct: 4 real signals added (Sintex ICA x2, Reliance Infrastructure resolution plans x2), 1 false alarm removed (Dabur consumer downgrade).
+- **All 10 fresh reports together: AUC 0.92 (v1) to 0.96 (v2).** The one wrong pair is Future Retail (0.88) against Dabur (0.89), the early-warning case of §8.2.
+- **New false-alarm type for v3:** "consumers downgraded" (Dabur, two of three instances still match). Not changed, to keep this exam clean.
+

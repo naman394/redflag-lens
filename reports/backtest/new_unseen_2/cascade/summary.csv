@@ -1,0 +1,5 @@
+report,group,sentences,flags,flags_per_1000,severe,severe_per_1000,seconds
+FRETAIL_FY2020,"distressed (new, unseen)",2263,66,29.2,1,0.44,155.78
+IDEA_FY2020,"distressed (new, unseen)",4034,288,71.4,18,4.46,265.05
+BAJAJAUTO_FY2024,"healthy (new, unseen)",3150,41,13.0,1,0.32,308.14
+BRITANNIA_FY2024,"healthy (new, unseen)",2651,70,26.4,0,0.0,147.24

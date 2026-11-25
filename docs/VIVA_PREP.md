@@ -76,3 +76,10 @@ Yes, with a two-step cascade (`REDFLAG_MODEL=cascade`). FinBERT scores every sen
 
 **Do you run three DeBERTa models in production?**
 No. The 0.86 is the 3-seed ensemble measured on a GPU. Only one DeBERTa model was saved (F1 0.84), and that is the one the app and the cascade use.
+
+**Did you test on more new reports? Did you tune on the test?**
+Yes, ten brand-new reports in total. After the first six we improved the severe list (severity v2: RBI early-warning signals such as pledged shares invoked and covenant breaches, plus filters for audit template text, business sales "as a going concern" and NCLT merger schemes). Because two of those fixes came from errors seen on the fresh reports, we treated those six as practice data. We checked every changed sentence on the training companies only, froze the rules, and then downloaded four more reports as a clean exam: Reliance Infrastructure 20.1 and Sintex 10.0 severe per 1,000 (both really collapsed) against Dabur 0.9 and Hero 0.4. AUC 1.00 on the clean four, 0.96 on all ten.
+
+**Where does it still fail?**
+One year before a default. Future Retail's FY2020 report was written before it defaulted; its auditor said it had not defaulted. The model flagged the early signs (debt up from Rs 2,554 cr to Rs 8,763 cr, lenders invoking pledged shares) but the severe score (0.88) only ties a healthy company. Fixing that needs a company-level early-warning model trained on reports one to two years before failure, compared year over year.
+

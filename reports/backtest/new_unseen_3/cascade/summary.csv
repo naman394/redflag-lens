@@ -1,0 +1,5 @@
+report,group,sentences,flags,flags_per_1000,severe,severe_per_1000,seconds
+SINTEX_FY2020,"distressed (new, unseen)",2290,222,96.9,23,10.04,191.31
+RELINFRA_FY2020,"distressed (new, unseen)",3429,379,110.5,69,20.12,305.11
+HEROMOTOCO_FY2024,"healthy (new, unseen)",5007,106,21.2,2,0.4,243.49
+DABUR_FY2023,"healthy (new, unseen)",5649,137,24.3,5,0.89,258.72
